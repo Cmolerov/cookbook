@@ -29,3 +29,24 @@
     margin-top: 15px;
     font-size: 35px;
 }
+
+/* ----------------------------signup page ------------------------------- */
+.signup_main-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    /* background-color: aqua; */
+    justify-content: space-between;
+}
+
+.signup_left-container {
+    height: 100%;
+    width: 50%;
+    background-color: blueviolet;
+}
+
+.signup_right-container {
+    height: 100%;
+    width: 50%;
+    background-color: red;
+}

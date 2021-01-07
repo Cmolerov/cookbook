@@ -31,7 +31,7 @@ function App() {
         <BrowserRouter>
             <NavBar setAuthenticated={setAuthenticated} />
             <Route exact path="/welcome">
-                <WelcomePage />
+                <WelcomePage/>
             </Route>
             <Route path="/login" exact={true}>
                 <LoginForm

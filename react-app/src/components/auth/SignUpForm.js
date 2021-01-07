@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import { signUp } from "../../services/auth";
 
 const SignUpForm = ({ authenticated, setAuthenticated }) => {
+    const [errors, setErrors] = useState([]);
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -44,6 +45,11 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
             <div className="signup_right-container">
                 <div className="signup_form-container">
                     <form onSubmit={onSignUp}>
+                        <div>
+                            {errors.map((error) => (
+                                <div>{error}</div>
+                            ))}
+                        </div>
                         <div className="signup_form-wrapper">
                             <h1 className="form_title">Umami</h1>
                             <label className="signup_label">User Name</label>

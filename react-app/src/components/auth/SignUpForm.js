@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import { signUp } from "../../services/auth";
 
 const SignUpForm = ({ authenticated, setAuthenticated }) => {
+    const [errors, setErrors] = useState([]);
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -43,7 +44,12 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
             <div className="signup_left-container"></div>
             <div className="signup_right-container">
                 <div className="signup_form-container">
-                    <form onSubmit={onSignUp}>
+                    <form className="form_container" onSubmit={onSignUp}>
+                        <div>
+                            {errors.map((error) => (
+                                <div>{error}</div>
+                            ))}
+                        </div>
                         <div className="signup_form-wrapper">
                             <h1 className="form_title">Umami</h1>
                             <label className="signup_label">User Name</label>
@@ -77,7 +83,7 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
                         </div>
                         <div className="signup_form-wrapper">
                             <label className="signup_label">
-                                Repeat Password
+                                Confirm Password
                             </label>
                             <input
                                 className="signup_input"

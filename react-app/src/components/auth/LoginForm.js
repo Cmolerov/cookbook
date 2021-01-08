@@ -31,36 +31,47 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
     return (
         <div className="signup_main-container">
-            <div className="signup_left-container"></div>
+            <div className="login_left-container"></div>
             <div className="signup_right-container">
-                <form onSubmit={onLogin}>
-                    <div>
-                        {errors.map((error) => (
-                            <div>{error}</div>
-                        ))}
-                    </div>
-                    <div>
-                        <label htmlFor="email">Email</label>
-                        <input
-                            name="email"
-                            type="text"
-                            placeholder="Email"
-                            value={email}
-                            onChange={updateEmail}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="password">Password</label>
-                        <input
-                            name="password"
-                            type="password"
-                            placeholder="Password"
-                            value={password}
-                            onChange={updatePassword}
-                        />
-                        <button type="submit">Login</button>
-                    </div>
-                </form>
+                <div className="signup_form-container">
+                    <form onSubmit={onLogin}>
+                        <div>
+                            {errors.map((error) => (
+                                <div>{error}</div>
+                            ))}
+                        </div>
+                        <div className="signup_form-wrapper">
+                            <h1 className="form_title">Umami</h1>
+                            <label className="signup_label" htmlFor="email">
+                                Email
+                            </label>
+                            <input
+                                className="signup_input"
+                                name="email"
+                                type="text"
+                                placeholder="Email"
+                                value={email}
+                                onChange={updateEmail}
+                            />
+                        </div>
+                        <div className="signup_form-wrapper">
+                            <label className="signup_label" htmlFor="password">
+                                Password
+                            </label>
+                            <input
+                                className="signup_input"
+                                name="password"
+                                type="password"
+                                placeholder="Password"
+                                value={password}
+                                onChange={updatePassword}
+                            />
+                            <button className="btn-grad" type="submit">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );

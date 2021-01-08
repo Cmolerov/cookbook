@@ -44,7 +44,7 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
             <div className="signup_left-container"></div>
             <div className="signup_right-container">
                 <div className="signup_form-container">
-                    <form onSubmit={onSignUp}>
+                    <form className="form_container" onSubmit={onSignUp}>
                         <div>
                             {errors.map((error) => (
                                 <div>{error}</div>

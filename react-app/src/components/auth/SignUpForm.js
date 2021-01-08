@@ -83,7 +83,7 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
                         </div>
                         <div className="signup_form-wrapper">
                             <label className="signup_label">
-                                Repeat Password
+                                Confirm Password
                             </label>
                             <input
                                 className="signup_input"

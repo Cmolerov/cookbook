@@ -17,6 +17,11 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    background-image: url("../images/Logo.png");
+    background-repeat: no-repeat;
+    background-size: 60px;
+    margin-top: 5px;
+    margin-left: 10px;
 }
 
 .navbar-title {

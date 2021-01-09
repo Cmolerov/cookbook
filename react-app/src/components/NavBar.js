@@ -10,9 +10,7 @@ const NavBar = ({ setAuthenticated }) => {
     return (
         <Container className="nav-wrapper" fluid>
             <Row>
-                <Col className="logo-wrapper">
-                    <h1>Logo</h1>
-                </Col>
+                <Col className="logo-wrapper"></Col>
                 <Col className="link-wrapper">
                     <ul className="navbar-container">
                         <li className="nav-links">

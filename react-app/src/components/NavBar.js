@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
 const NavBar = ({ setAuthenticated }) => {
     return (
-        <Container className="nav-wrapper" fluid>
+        <Container className="nav-wrapper_welcome" fluid>
             <Row>
                 <Col className="logo-wrapper"></Col>
                 <Col className="link-wrapper">

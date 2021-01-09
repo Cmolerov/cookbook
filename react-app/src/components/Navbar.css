@@ -9,19 +9,26 @@
     margin-left: 25px;
 }
 
-.nav-wrapper {
-    background-color: #009595;
+.nav-wrapper_welcome {
+    background-color: #a2d7e0;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.nav-wrapper_login {
 }
 
+.nav-wrapper_signup {
+}
 .logo-wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-image: url("../images/Logo.png");
+    /* background-image: url("../images/Logo.png"); */
     background-repeat: no-repeat;
     background-size: 60px;
     margin-top: 5px;
     margin-left: 10px;
+    color: #427386;
 }
 
 .navbar-title {

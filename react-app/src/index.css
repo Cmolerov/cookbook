@@ -211,3 +211,39 @@ body {
 .bn632-hover:focus {
     outline: none;
 }
+
+/* ----------------------------home page ------------------------------- */
+.homePage_wrapper {
+    margin: 0;
+    padding: 0;
+}
+.homePage_sidebar {
+    /* height: 80vh; */
+    background-color: #437486;
+}
+
+.homePage_content-container {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+}
+.homePage_recipes-container {
+    height: 85%;
+    width: 90%;
+    background-color: #a3d6df;
+    margin-top: 50px;
+    margin-left: 15px;
+}
+
+/* ----------------------------footer------------------------------- */
+/* .github_icon {
+    background-size: cover;
+    background-image: url("./images/github_icon.png");
+    background-color: blue;
+} */
+
+.footer {
+    height: 50px;
+    /* background-color: Red; */
+    border-top: 1px solid #a3d6df;
+}

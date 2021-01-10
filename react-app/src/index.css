@@ -211,3 +211,20 @@ body {
 .bn632-hover:focus {
     outline: none;
 }
+
+/* ----------------------------home page ------------------------------- */
+
+.homePage_sidebar {
+    height: 85vh;
+    background-color: #30dd8a;
+}
+
+.homePage_content-container {
+    height: 85vh;
+    background-color: red;
+}
+.homePage_recipes-container {
+    height: 85%;
+    width: 90%;
+    background-color: #009595;
+}

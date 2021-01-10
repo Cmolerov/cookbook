@@ -103,12 +103,11 @@ export default function UserMenu({ authenticated, setAuthenticated }) {
                 onClick={handleClick}
             >
                 <MenuIcon
-                    color="primary"
-                    style={{ marginRight: "5px" }}
+                    style={{ color: "#437486", marginRight: "5px" }}
                 ></MenuIcon>
                 <AccountCircleIcon
                     fontSize="large"
-                    color="primary"
+                    style={{ color: "#437486" }}
                 ></AccountCircleIcon>{" "}
             </UserMenuContainerAuth>
 

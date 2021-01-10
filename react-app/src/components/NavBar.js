@@ -14,7 +14,7 @@ const NavBar = ({ setAuthenticated, authenticated }) => {
             <Row>
                 <Col className="logo-wrapper">
                     <NavLink to="/" exact={true}>
-                        <i className="fas fa-utensils icon"></i>
+                        <i className="fas fa-utensils icon"> Umami</i>
                     </NavLink>
                 </Col>
                 <Col className="link-wrapper">

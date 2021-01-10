@@ -231,12 +231,12 @@ body {
     height: 85%;
     width: 90%;
     background-color: #a3d6df;
-    margin-top: 45px;
+    margin-top: 50px;
     margin-left: 15px;
 }
 
 .footer {
     height: 50px;
     background-color: white;
-    border-top: 1px solid black;
+    border-top: 1px solid #a3d6df;
 }

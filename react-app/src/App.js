@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import {
+    BrowserRouter,
+    Route,
+    Switch,
+    useHistory,
+    Redirect,
+} from "react-router-dom";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
@@ -13,7 +19,7 @@ function App() {
     const [authenticated, setAuthenticated] = useState(false);
     const [loaded, setLoaded] = useState(false);
     const [user, setUser] = useState({});
-
+    const history = useHistory();
     useEffect(() => {
         (async () => {
             const userData = await authenticate();
@@ -24,6 +30,10 @@ function App() {
             setLoaded(true);
         })();
     }, []);
+
+    useEffect(() => {
+        if (!authenticated) return <Redirect to="/welcome" />;
+    }, [history]);
 
     if (!loaded) {
         return null;

@@ -1,5 +1,6 @@
-import React from 'react'
+import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import Footer from "./Footer";
 
 export default function HomePage() {
     return (
@@ -10,7 +11,8 @@ export default function HomePage() {
                     <div className="homePage_recipes-container"></div>
                 </Col>
             </Row>
-            <Row className="footer row-12">footer</Row>
+            {/* <Row className="footer row-12">footer</Row> */}
+            <Footer />
         </Container>
-    )
+    );
 }

@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import {
+    BrowserRouter,
+    Route,
+    Switch,
+    useHistory,
+    Redirect,
+} from "react-router-dom";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
@@ -12,16 +18,22 @@ import WelcomePage from "./components/WelcomePage";
 function App() {
     const [authenticated, setAuthenticated] = useState(false);
     const [loaded, setLoaded] = useState(false);
-
+    const [user, setUser] = useState({});
+    const history = useHistory();
     useEffect(() => {
         (async () => {
-            const user = await authenticate();
-            if (!user.errors) {
+            const userData = await authenticate();
+            if (!userData.errors) {
+                setUser(userData);
                 setAuthenticated(true);
             }
             setLoaded(true);
         })();
     }, []);
+
+    useEffect(() => {
+        if (!authenticated) return <Redirect to="/welcome" />;
+    }, [history]);
 
     if (!loaded) {
         return null;
@@ -29,39 +41,51 @@ function App() {
 
     return (
         <BrowserRouter>
-            <NavBar setAuthenticated={setAuthenticated} />
-            <Route exact path="/welcome">
-                <WelcomePage/>
-            </Route>
-            <Route path="/login" exact={true}>
-                <LoginForm
-                    authenticated={authenticated}
-                    setAuthenticated={setAuthenticated}
-                />
-            </Route>
-            <Route path="/sign-up" exact={true}>
-                <SignUpForm
-                    authenticated={authenticated}
-                    setAuthenticated={setAuthenticated}
-                />
-            </Route>
-            <ProtectedRoute
-                path="/users"
-                exact={true}
+            <NavBar
+                setAuthenticated={setAuthenticated}
                 authenticated={authenticated}
-            >
-                <UsersList />
-            </ProtectedRoute>
-            <ProtectedRoute
-                path="/users/:userId"
-                exact={true}
-                authenticated={authenticated}
-            >
-                <User />
-            </ProtectedRoute>
-            <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-                <h1>hello</h1>
-            </ProtectedRoute>
+            />
+            <Switch>
+                <Route exact path="/welcome">
+                    <WelcomePage
+                        setAuthenticated={setAuthenticated}
+                        authenticated={authenticated}
+                    />
+                </Route>
+                <Route path="/login" exact={true}>
+                    <LoginForm
+                        authenticated={authenticated}
+                        setAuthenticated={setAuthenticated}
+                    />
+                </Route>
+                <Route path="/sign-up" exact={true}>
+                    <SignUpForm
+                        authenticated={authenticated}
+                        setAuthenticated={setAuthenticated}
+                    />
+                </Route>
+                <ProtectedRoute
+                    path="/users"
+                    exact={true}
+                    authenticated={authenticated}
+                >
+                    <UsersList />
+                </ProtectedRoute>
+                <ProtectedRoute
+                    path="/users/:userId"
+                    exact={true}
+                    authenticated={authenticated}
+                >
+                    <User />
+                </ProtectedRoute>
+                <ProtectedRoute
+                    path="/"
+                    exact={true}
+                    authenticated={authenticated}
+                >
+                    <h1>hello</h1>
+                </ProtectedRoute>
+            </Switch>
         </BrowserRouter>
     );
 }

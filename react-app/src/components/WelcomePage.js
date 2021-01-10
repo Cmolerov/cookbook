@@ -1,8 +1,19 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { login } from "./../services/auth";
 
-export default function WelcomePage() {
+export default function WelcomePage({ setAuthenticated }) {
+    const history = useHistory();
+    const handleDemoLogin = async (e) => {
+        e.preventDefault();
+        const user = await login("demo@aa.io", "password");
+        if (!user.errors) {
+            setAuthenticated(true);
+            history.push("/");
+        }
+    };
     console.log(window.location.pathname);
     return (
         <Container className="welcome_wrapper" fluid>
@@ -18,7 +29,10 @@ export default function WelcomePage() {
                             most popular dishes, as well as a number of
                             traditional recipes that you can explore.
                         </p>
-                        <button className="demo-btn_welcome bn632-hover">
+                        <button
+                            onClick={handleDemoLogin}
+                            className="demo-btn_welcome bn632-hover"
+                        >
                             {" "}
                             Demo User
                         </button>

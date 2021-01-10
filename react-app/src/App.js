@@ -12,11 +12,13 @@ import WelcomePage from "./components/WelcomePage";
 function App() {
     const [authenticated, setAuthenticated] = useState(false);
     const [loaded, setLoaded] = useState(false);
+    const [user, setUser] = useState({});
 
     useEffect(() => {
         (async () => {
-            const user = await authenticate();
-            if (!user.errors) {
+            const userData = await authenticate();
+            if (!userData.errors) {
+                setUser(userData);
                 setAuthenticated(true);
             }
             setLoaded(true);
@@ -35,7 +37,10 @@ function App() {
             />
             <Switch>
                 <Route exact path="/welcome">
-                    <WelcomePage authenticated={authenticated} />
+                    <WelcomePage
+                        setAuthenticated={setAuthenticated}
+                        authenticated={authenticated}
+                    />
                 </Route>
                 <Route path="/login" exact={true}>
                     <LoginForm

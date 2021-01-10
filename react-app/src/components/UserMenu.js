@@ -6,6 +6,7 @@ import Fade from "@material-ui/core/Fade";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
 import { logout } from "../services/auth";
 
 const useStyles = makeStyles({
@@ -73,9 +74,8 @@ const UserMenuContainerAuth = styled.div`
 `;
 
 export default function UserMenu({ authenticated, setAuthenticated }) {
+    const history = useHistory();
     const [anchorEl, setAnchorEl] = useState(null);
-    const [openLoginModal, setOpenLoginModal] = useState(false);
-    const [openSignupModal, setOpenSignupModal] = useState(false);
     const open = Boolean(anchorEl);
     const classes = useStyles();
 
@@ -87,20 +87,12 @@ export default function UserMenu({ authenticated, setAuthenticated }) {
         setAnchorEl(null);
     };
 
-    const handleCloseLoginModal = () => {
-        setOpenLoginModal(false);
-    };
-
-    const handleCloseSignupModal = () => {
-        setOpenSignupModal(false);
-    };
-
     const onLogout = async (e) => {
         await logout();
+        history.push("/welcome");
         setAuthenticated(false);
-        setOpenLoginModal(false);
-        setOpenSignupModal(false);
         setAnchorEl(null);
+        history.push("/welcome");
     };
 
     return (

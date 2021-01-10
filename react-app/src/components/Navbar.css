@@ -19,28 +19,34 @@
 
 .nav-wrapper_signup {
 }
-.logo-wrapper {
+/* .logo-wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    /* background-image: url("../images/Logo.png"); */
+
     background-repeat: no-repeat;
     background-size: 60px;
     margin-top: 5px;
-    margin-left: 10px;
+
     color: #427386;
+} */
+.icon {
+    font-size: 50px;
+    color: #427386;
+    margin-top: 20px;
 }
 
 .navbar-title {
-    color: white;
+    color: #76b3cb;
 }
 a:hover {
     text-decoration: none !important;
-    color: grey;
+    color: #497383;
 }
 
 .active {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #548396;
 }
 
 @media (max-width: 768px) {
@@ -63,3 +69,14 @@ a:hover {
         padding-right: 40px !important;
     }
 }
+.user-menu {
+    justify-self: flex-end;
+    margin-left: 100px;
+}
+
+.logo-wrapper {
+    margin-bottom: 15px;
+}
+
+
+

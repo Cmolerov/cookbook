@@ -9,7 +9,7 @@ export default function WelcomePage() {
             <Row>
                 <Col className="col-7">
                     <div className="header-text_wrapper">
-                        <p className="welcome-text">The Cookbook App</p>
+                        <p className="welcome-text">Welcome to Umami</p>
                         <h1 className="header-text">
                             The Ultimate <br /> CookBook <br /> App.
                         </h1>
@@ -18,7 +18,10 @@ export default function WelcomePage() {
                             most popular dishes, as well as a number of
                             traditional recipes that you can explore.
                         </p>
-                        <button className="demo-btn_welcome"> Demo User</button>
+                        <button className="demo-btn_welcome bn632-hover">
+                            {" "}
+                            Demo User
+                        </button>
                     </div>
                 </Col>
                 <Col></Col>

@@ -213,18 +213,30 @@ body {
 }
 
 /* ----------------------------home page ------------------------------- */
-
+.homePage_wrapper {
+    margin: 0;
+    padding: 0;
+}
 .homePage_sidebar {
-    height: 85vh;
-    background-color: #30dd8a;
+    /* height: 80vh; */
+    background-color: #437486;
 }
 
 .homePage_content-container {
     height: 85vh;
-    background-color: red;
+    display: flex;
+    justify-content: center;
 }
 .homePage_recipes-container {
     height: 85%;
     width: 90%;
-    background-color: #009595;
+    background-color: #a3d6df;
+    margin-top: 45px;
+    margin-left: 15px;
+}
+
+.footer {
+    height: 50px;
+    background-color: white;
+    border-top: 1px solid black;
 }

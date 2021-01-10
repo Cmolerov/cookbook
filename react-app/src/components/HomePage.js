@@ -10,7 +10,7 @@ export default function HomePage() {
                     <div className="homePage_recipes-container"></div>
                 </Col>
             </Row>
-            <p>footer</p>
+            <Row className="footer row-12">footer</Row>
         </Container>
     )
 }

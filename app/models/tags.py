@@ -9,7 +9,7 @@ class Tags(db.Model):
     recipeId = db.Column(db.Integer, db.ForeignKey(
         "recipes.id"), nullable=False, unique=True)
 
-    recipes = db.relationship("Recipes", back_populates="recipes",)
+    recipes = db.relationship("Recipes", back_populates="tags",)
 
     def __init__(self, tag, recipeId):
         self.tag = tag,

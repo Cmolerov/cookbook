@@ -10,4 +10,4 @@ class Recipes(db.Model):
     description = db.Column(db.String(250), nullable = False)
     cookTime = db.Column(db.Integer, nullable = False)
     image = db.Column(db.String(5000), nullable = True)
-    tags
+    tags = db.Column(db, db.ForeignKey("tags.id") nullable = True, unique = True)

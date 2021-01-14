@@ -17,6 +17,7 @@ class Recipes(db.Model):
     user = db.relationship("User", back_populates="recipes",)
     tags = db.relationship("Tags", back_populates="recipes")
     instructions = db.relationship("Instructions", back_populates="recipes")
+    ingredients = db.relationship("Ingredients", back_populates="recipes")
 
     def __init__(self, userId, title, description, cookTime, image, tagId):
         self.userId = userId

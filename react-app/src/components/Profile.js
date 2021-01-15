@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 
 export default function Profile() {
     return (
-        <div>
-            hello
-        </div>
-    )
+        <Container fluid>
+            <Col></Col>
+            <Col></Col>
+        </Container>
+    );
 }

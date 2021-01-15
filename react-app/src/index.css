@@ -260,7 +260,13 @@ body {
     font-family: "Paytone One", sans-serif;
     color: #a3d6df;
 }
-
+.recipe_input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.recipe_form-label{
+    
+}
 /* ----------------------------footer------------------------------- */
 /* .github_icon {
     background-size: cover;

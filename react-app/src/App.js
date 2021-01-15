@@ -86,6 +86,11 @@ function App() {
                 >
                     <HomePage />
                 </ProtectedRoute>
+                <ProtectedRoute
+                    path="/"
+                    exact={true}
+                    authenticated={authenticated}
+                ></ProtectedRoute>
             </Switch>
         </BrowserRouter>
     );

@@ -15,6 +15,7 @@ import User from "./components/User";
 import { authenticate } from "./services/auth";
 import WelcomePage from "./components/WelcomePage";
 import HomePage from "./components/HomePage";
+import Profile from "./components/Profile";
 
 function App() {
     const [authenticated, setAuthenticated] = useState(false);
@@ -90,7 +91,16 @@ function App() {
                     path="/"
                     exact={true}
                     authenticated={authenticated}
-                ></ProtectedRoute>
+                >
+                    <HomePage />
+                </ProtectedRoute>
+                <ProtectedRoute
+                    path="/profile"
+                    exact={true}
+                    authenticated={authenticated}
+                >
+                    <Profile />
+                </ProtectedRoute>
             </Switch>
         </BrowserRouter>
     );

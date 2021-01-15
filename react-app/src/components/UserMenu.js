@@ -94,6 +94,9 @@ export default function UserMenu({ authenticated, setAuthenticated }) {
         setAnchorEl(null);
         history.push("/welcome");
     };
+    const onProfile = async (e) => {
+        history.push("/profile");
+    };
 
     return (
         <>
@@ -121,6 +124,9 @@ export default function UserMenu({ authenticated, setAuthenticated }) {
                 TransitionComponent={Fade}
             >
                 <UserMenuPopUpItem onClick={onLogout}>Logout</UserMenuPopUpItem>
+                <UserMenuPopUpItem onClick={onProfile}>
+                    Profile
+                </UserMenuPopUpItem>
             </UserMenuPopUp>
         </>
     );

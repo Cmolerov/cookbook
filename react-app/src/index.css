@@ -1,5 +1,6 @@
 /* TODO Add site wide styles */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Paytone+One&display=swap");
 /* ----------------------------body and html ------------------------------- */
 #root {
     width: 100%;
@@ -15,7 +16,6 @@ body {
 /* ----------------------------welcome page ------------------------------- */
 .welcome_wrapper {
     height: 95vh;
-
     background-color: #a2d7e0;
     background-image: url("./images/homePage.png");
     background-size: cover;
@@ -258,11 +258,24 @@ body {
 .create_recipe-main {
     display: flex;
     justify-content: center;
+    background-color: #427386;
+    height: calc(100vh - 89px);
 }
 .recipe_form-container {
-    background-color: #009595;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     width: 80%;
-    margin-top: 40px;
+    margin: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #a3d6df;
+}
+
+.recipe_title {
+    font-size: 30px;
+    font-family: "Paytone One", sans-serif;
+    color: #a3d6df;
 }
 
 /* ----------------------------footer------------------------------- */

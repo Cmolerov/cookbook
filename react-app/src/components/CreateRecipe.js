@@ -6,7 +6,7 @@ export default function CreateRecipe() {
         <Container className="create_recipe-main" fluid>
             <Row className="recipe_form-container">
                 <Col className="create_recipes-container">
-                    <h1>hello</h1>
+                    <h1 className="recipe_title">Create a Recipe</h1>
                 </Col>
             </Row>
         </Container>

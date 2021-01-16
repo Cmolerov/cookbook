@@ -94,6 +94,12 @@ export default function UserMenu({ authenticated, setAuthenticated }) {
         setAnchorEl(null);
         history.push("/welcome");
     };
+    const onProfile = async (e) => {
+        history.push("/profile");
+    };
+    const onCreate = async (e) => {
+        history.push("/createrecipe");
+    };
 
     return (
         <>
@@ -120,6 +126,12 @@ export default function UserMenu({ authenticated, setAuthenticated }) {
                 onClose={handleClose}
                 TransitionComponent={Fade}
             >
+                <UserMenuPopUpItem onClick={onProfile}>
+                    Profile
+                </UserMenuPopUpItem>
+                <UserMenuPopUpItem onClick={onCreate}>
+                    Create Recipe
+                </UserMenuPopUpItem>
                 <UserMenuPopUpItem onClick={onLogout}>Logout</UserMenuPopUpItem>
             </UserMenuPopUp>
         </>

@@ -15,6 +15,8 @@ import User from "./components/User";
 import { authenticate } from "./services/auth";
 import WelcomePage from "./components/WelcomePage";
 import HomePage from "./components/HomePage";
+import Profile from "./components/Profile";
+import CreateRecipe from "./components/CreateRecipe";
 
 function App() {
     const [authenticated, setAuthenticated] = useState(false);
@@ -85,6 +87,27 @@ function App() {
                     authenticated={authenticated}
                 >
                     <HomePage />
+                </ProtectedRoute>
+                <ProtectedRoute
+                    path="/"
+                    exact={true}
+                    authenticated={authenticated}
+                >
+                    <HomePage />
+                </ProtectedRoute>
+                <ProtectedRoute
+                    path="/profile"
+                    exact={true}
+                    authenticated={authenticated}
+                >
+                    <Profile />
+                </ProtectedRoute>
+                <ProtectedRoute
+                    path="/createrecipe"
+                    exact={true}
+                    authenticated={authenticated}
+                >
+                    <CreateRecipe />
                 </ProtectedRoute>
             </Switch>
         </BrowserRouter>

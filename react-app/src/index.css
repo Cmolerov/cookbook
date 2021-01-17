@@ -264,8 +264,14 @@ body {
     display: flex;
     flex-direction: column;
 }
-.recipe_form-label{
-    
+.recipe_form-label {
+}
+.recipe_form-input {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-color: #437486;
+    margin-bottom: 10px;
 }
 /* ----------------------------footer------------------------------- */
 /* .github_icon {

@@ -8,45 +8,53 @@ export default function CreateRecipe() {
                 <Col className="create_recipes-container">
                     <h1 className="recipe_title">Create a Recipe</h1>
                     <form className="recipe_form">
+                        <Row>
+                            <Col className="recipe_input-wrapper col-8">
+                                <label className="recipe_form-label">
+                                    Title
+                                </label>
+                                <input className="recipe_form-input"></input>
+                            </Col>
+                            <Col className="recipe_input-wrapper">
+                                <label className="recipe_form-label">
+                                    Cook Time
+                                </label>
+                                <input className="recipe_form-input"></input>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="recipe_input-wrapper col-8">
+                                <label className="recipe_form-label">
+                                    Description
+                                </label>
+                                <input className="recipe_form-input"></input>
+                            </Col>
+
+                            <Col className="recipe_input-wrapper">
+                                <label className="recipe_form-label">
+                                    Image
+                                </label>
+                                <input className="recipe_form-input"></input>
+                            </Col>
+                        </Row>
+
                         <div className="recipe_input-wrapper">
-                            <label className="recipe_form-label">Title</label>
-                            <input></input>
-                        </div>
-                        <div className="recipe_input-wrapper">
-                            <label className="recipe_form-label">
-                                Description
-                            </label>
-                            <input className="recipe_form-input"></input>
-                        </div>
-                        <div className="recipe_input-wrapper">
-                            <label className="recipe_form-label">
-                                Cook Time
-                            </label>
-                            <input className="recipe_form-input"></input>
-                        </div>
-                        <div className="recipe_input-wrapper">
-                            <label className="recipe_form-label">Image</label>
-                            <input className="recipe_form-input"></input>
-                        </div>
-                        <div className="recipe_input-wrapper">
-                            <p>ingredients</p>
-                            <label className="recipe_form-label">
-                                Measurement
-                            </label>
-                            <input className="recipe_form-input"></input>
-                            <label className="recipe_form-label">Product</label>
-                            <input className="recipe_form-input"></input>
-                        </div>
-                        <div className="recipe_input-wrapper">
-                            <p>instructions</p>
-                            <label className="recipe_form-label">
-                                list order
-                            </label>
-                            <input className="recipe_form-input"></input>
                             <label className="recipe_form-label">
                                 Ingredient
                             </label>
-                            <input className="recipe_form-input"></input>
+                            <input
+                                className="recipe_form-input"
+                                placeholder="ex. 4 apples, 3 peppers"
+                            ></input>
+                        </div>
+                        <div className="recipe_input-wrapper">
+                            <label className="recipe_form-label">
+                                Instructions
+                            </label>
+                            <input
+                                className="recipe_form-input"
+                                placeholder="ex. cut 2 apples, mix peppers"
+                            ></input>
                         </div>
                     </form>
                 </Col>

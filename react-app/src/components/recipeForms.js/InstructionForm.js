@@ -6,32 +6,11 @@ export default function InstructionForm() {
         <div className="about_recipe-form-container">
             <form>
                 <Col className="recipe_input-wrapper">
-                    <label className="recipe_form-label">Title</label>
-                    <input className="recipe_form-input"></input>
-                </Col>
-                <Col className="recipe_input-wrapper">
-                    <label className="recipe_form-label">Description</label>
-                    <input className="recipe_form-input"></input>
-                </Col>
-                <Col className="recipe_input-wrapper">
-                    <label className="recipe_form-label">Time To Cook</label>
-                    <input className="recipe_form-input"></input>
-                </Col>
-                <Col className="recipe_input-wrapper">
-                    <label className="recipe_form-label">Image</label>
-                    <input className="recipe_form-input"></input>
-                </Col>
-                <Col className="recipe_input-wrapper">
-                    <label className="recipe_form-label">
-                        Possible Allergies
-                    </label>
-                    <input
-                        className="recipe_form-input"
-                        placeholder="(seperate by comma) ex. seafood, gluten.."
-                    ></input>
+                    <label className="recipe_form-label">Instructions</label>
+                    <input className="recipe_form-input instructions-input"></input>
                 </Col>
             </form>
-            <button className="recipe_form-Continue-btn">Continue</button>
+            <button className="recipe_form-Continue-btn">Submit</button>
         </div>
     );
 }

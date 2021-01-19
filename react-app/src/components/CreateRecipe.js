@@ -9,8 +9,8 @@ export default function CreateRecipe() {
             <Row className="recipe_form-container">
                 <Col className="create_recipes-container">
                     <h1 className="recipe_title">Create a Recipe</h1>
-                    <RecipeForm />
-                    {/* <InstructionForm /> */}
+                    {/* <RecipeForm /> */}
+                    <InstructionForm />
                 </Col>
             </Row>
         </Container>

@@ -286,10 +286,20 @@ body {
     width: 300px;
 }
 
+/* ----------------------------filter bar------------------------------- */
+
+.timeOfDay {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+
 /* ----------------------------instructions form------------------------------- */
 /* .instructions-input {
     width: 75%;
 } */
+
 
 /* ----------------------------footer------------------------------- */
 /* .github_icon {

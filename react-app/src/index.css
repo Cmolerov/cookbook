@@ -273,6 +273,14 @@ body {
     border-color: #437486;
     margin-bottom: 10px;
 }
+/* ----------------------------filter bar------------------------------- */
+
+.timeOfDay {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
 /* ----------------------------footer------------------------------- */
 /* .github_icon {
     background-size: cover;

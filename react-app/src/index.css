@@ -271,7 +271,7 @@ body {
     border-right: none;
     border-top: none;
     border-color: #437486;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 /* ----------------------------recipe form------------------------------- */
@@ -281,7 +281,7 @@ body {
     font-weight: 50;
     font-family: "Paytone One", sans-serif;
     margin-left: 30%;
-    margin-top: 100px;
+    margin-top: 10px;
     padding: 10px;
     width: 300px;
 }

@@ -10,7 +10,7 @@ export default function CreateRecipe() {
                 <Col className="create_recipes-container">
                     <h1 className="recipe_title">Create a Recipe</h1>
                     <RecipeForm />
-                    <InstructionForm />
+                    {/* <InstructionForm /> */}
                 </Col>
             </Row>
         </Container>

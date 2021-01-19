@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import RecipeForm from "./recipeForms.js/RecipeForm";
 import InstructionForm from "./recipeForms.js/InstructionForm";
+import IngredientsForm from "./recipeForms.js/IngredientsForm";
 
 export default function CreateRecipe() {
     return (
@@ -10,7 +11,8 @@ export default function CreateRecipe() {
                 <Col className="create_recipes-container">
                     <h1 className="recipe_title">Create a Recipe</h1>
                     {/* <RecipeForm /> */}
-                    <InstructionForm />
+                    <IngredientsForm />
+                    {/* <InstructionForm /> */}
                 </Col>
             </Row>
         </Container>

@@ -1,5 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import RecipeForm from "./recipeForms.js/RecipeForm";
+import InstructionForm from "./recipeForms.js/InstructionForm";
 
 export default function CreateRecipe() {
     return (
@@ -7,7 +9,15 @@ export default function CreateRecipe() {
             <Row className="recipe_form-container">
                 <Col className="create_recipes-container">
                     <h1 className="recipe_title">Create a Recipe</h1>
-                    <form className="recipe_form">
+                    <RecipeForm />
+                    <InstructionForm />
+                </Col>
+            </Row>
+        </Container>
+    );
+}
+
+/* <form className="recipe_form">
                         <Row>
                             <Col className="recipe_input-wrapper col-8">
                                 <label className="recipe_form-label">
@@ -56,9 +66,4 @@ export default function CreateRecipe() {
                                 placeholder="ex. cut 2 apples, mix peppers"
                             ></input>
                         </div>
-                    </form>
-                </Col>
-            </Row>
-        </Container>
-    );
-}
+                    </form> */

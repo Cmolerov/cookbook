@@ -58,7 +58,7 @@ const NavBar = ({ setAuthenticated, authenticated }) => {
                                         Sign Up
                                     </NavLink>
                                 </li>
-                                <li className="nav-links">
+                                {/* <li className="nav-links">
                                     <NavLink
                                         className="navbar-title"
                                         to="/users"
@@ -67,7 +67,7 @@ const NavBar = ({ setAuthenticated, authenticated }) => {
                                     >
                                         Users
                                     </NavLink>
-                                </li>
+                                </li> */}
                             </ul>
                         </>
                     )}

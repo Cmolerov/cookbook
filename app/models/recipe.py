@@ -3,7 +3,7 @@ from .user import User
 from .tags import Tags
 
 
-class Recipes(db.Model):
+class Recipe(db.Model):
     __tablename__ = 'recipes'
 
     id = db.Column(db.Integer, primary_key=True)

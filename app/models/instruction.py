@@ -1,7 +1,7 @@
 from .db import db
 
 
-class Instructions(db.Model):
+class Instruction(db.Model):
     __tablename__ = 'instructions'
 
     id = db.Column(db.Integer, primary_key=True)

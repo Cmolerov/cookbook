@@ -10,7 +10,7 @@ class Instruction(db.Model):
     recipeId = db.Column(db.Integer, db.ForeignKey(
         "recipes.id"), nullable=False, unique=True)
 
-    recipes = db.relationship("Recipes", back_populates="instructions",)
+    recipes = db.relationship("Recipe", back_populates="instructions",)
 
     def __init__(self, list_order, instruction_text, recipeId):
         self.list_order = list_order,

@@ -10,7 +10,7 @@ class Ingredient(db.Model):
     recipeId = db.Column(db.Integer, db.ForeignKey(
         "recipes.id"), nullable=False, unique=True)
 
-    recipes = db.relationship("Recipes", back_populates="ingredients",)
+    recipes = db.relationship("Recipe", back_populates="ingredients",)
 
     def __init__(self, measurement, product, recipeId):
         self.measurement = measurement,

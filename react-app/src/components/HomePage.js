@@ -25,7 +25,7 @@ export default function HomePage() {
                         </label>
                     </div>
                     <div className="timeOfDay">
-                        <h2>Meat type</h2>
+                        <h2>Diet</h2>
                         <label>
                             Chicken
                             <input type="checkbox"></input>

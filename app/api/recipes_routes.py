@@ -23,8 +23,9 @@ def validation_errors_to_error_messages(validation_errors):
 def create_recipe():
     form = RecipeForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+    print(dir(request))
     if form.validate_on_submit():
-        recipe = Recipes(userId=request.json["userId"], title=form.data['title'],
+        recipe = Recipes(userId=form.data["userId"], title=form.data['title'],
                          description=form.data['description'], cookTime=form.data['cookTime'], image=form.data['image'],)
         db.session.add(recipe)
         db.session.commit()

@@ -8,4 +8,4 @@ class RecipeForm(FlaskForm):
     description = StringField('description', validators=[DataRequired()])
     cookTime = IntegerField('cookTime', validators=[DataRequired()])
     image = StringField('image')
-    
+    userId = IntegerField("userId", validators=[DataRequired()])

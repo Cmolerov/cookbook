@@ -4,13 +4,13 @@ import RecipeForm from "./recipeForms.js/RecipeForm";
 import InstructionForm from "./recipeForms.js/InstructionForm";
 import IngredientsForm from "./recipeForms.js/IngredientsForm";
 
-export default function CreateRecipe() {
+export default function CreateRecipe({ user }) {
     return (
         <Container className="create_recipe-main" fluid>
             <Row className="recipe_form-container">
                 <Col className="create_recipes-container">
                     <h1 className="recipe_title">Create a Recipe</h1>
-                    <RecipeForm />
+                    <RecipeForm user={user} />
                     {/* <IngredientsForm /> */}
                     {/* <InstructionForm /> */}
                 </Col>

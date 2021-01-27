@@ -23,6 +23,7 @@ function App() {
     const [loaded, setLoaded] = useState(false);
     const [user, setUser] = useState({});
     const history = useHistory();
+
     useEffect(() => {
         (async () => {
             const userData = await authenticate();
@@ -48,6 +49,7 @@ function App() {
                 setAuthenticated={setAuthenticated}
                 authenticated={authenticated}
             />
+
             <Switch>
                 <Route exact path="/welcome">
                     <WelcomePage
@@ -107,7 +109,7 @@ function App() {
                     exact={true}
                     authenticated={authenticated}
                 >
-                    <CreateRecipe />
+                    <CreateRecipe user={user} />
                 </ProtectedRoute>
             </Switch>
         </BrowserRouter>

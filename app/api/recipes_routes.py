@@ -24,7 +24,8 @@ def create_recipe():
     form = RecipeForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
-        recipe = Recipes(userId=request.json["userId"], title=form.data['title'], description=form.data['description'], cookTime=form.data['cookTime'], image=form.data['image'],)
+        recipe = Recipes(userId=request.json["userId"], title=form.data['title'],
+                         description=form.data['description'], cookTime=form.data['cookTime'], image=form.data['image'],)
         db.session.add(recipe)
         db.session.commit()
         return jsonify(recipe.to_dict())

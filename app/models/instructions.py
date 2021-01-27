@@ -8,7 +8,7 @@ class Instructions(db.Model):
     list_order = db.Column(db.Integer, nullable=False)
     instruction_text = db.Column(db.String(150), nullable=False)
     recipeId = db.Column(db.Integer, db.ForeignKey(
-        "recipes.id"), nullable=False, unique=True)
+        "recipes.id"), nullable=False)
 
     recipes = db.relationship("Recipes", back_populates="instructions",)
 

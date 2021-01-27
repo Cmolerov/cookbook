@@ -24,10 +24,11 @@ def create_instruction():
     form = InstructionForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
-        instruction = Instructions(
-            list_order=request.json["list_order"],
-            instruction_text=request.json["instruction_text"],
-            recipeId=request.json["recipeId"],)
+        print(form.data)
+        instruction = Instructions(            
+            list_order=form.data["list_order"],
+            instruction_text=form.data["instruction_text"],
+            recipeId=form.data["recipeId"],)
         db.session.add(instruction)
         db.session.commit()
         return jsonify(instruction.to_dict())

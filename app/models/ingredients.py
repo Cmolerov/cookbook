@@ -17,7 +17,7 @@ class Ingredients(db.Model):
         self.product = product,
         self.recipeId = recipeId
 
-    def to_dict(self, measurement, product, recipeId):
+    def to_dict(self):
         return {
             "id": self.id,
             "measurement": self.measurement,

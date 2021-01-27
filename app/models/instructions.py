@@ -17,7 +17,7 @@ class Instructions(db.Model):
         self.instruction_text = instruction_text,
         self.recipeId = recipeId
 
-    def to_dict(self, list_order, instruction_text, recipeId):
+    def to_dict(self):
         return {
             "id": self.id,
             "list_order": self.list_order,

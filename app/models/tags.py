@@ -15,7 +15,7 @@ class Tags(db.Model):
         self.tag = tag,
         self.recipeId = recipeId
 
-    def to_dict(self, tag, recipeId):
+    def to_dict(self):
         return {
             "id": self.id,
             "tag": self.tag,

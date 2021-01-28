@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: c00304963f03
+Revision ID: b21cb7df0512
 Revises: 
-Create Date: 2021-01-14 18:30:36.776817
+Create Date: 2021-01-27 18:50:49.149762
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'c00304963f03'
+revision = 'b21cb7df0512'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -34,18 +34,18 @@ def upgrade():
     sa.Column('description', sa.String(length=250), nullable=False),
     sa.Column('cookTime', sa.Integer(), nullable=False),
     sa.Column('image', sa.String(length=5000), nullable=True),
+    sa.Column('created_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['userId'], ['users.id'], ),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('userId')
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('ingredients',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('measurement_type', sa.String(length=50), nullable=False),
     sa.Column('measurement', sa.Integer(), nullable=False),
     sa.Column('product', sa.String(length=100), nullable=False),
     sa.Column('recipeId', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['recipeId'], ['recipes.id'], ),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('recipeId')
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('instructions',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -53,8 +53,7 @@ def upgrade():
     sa.Column('instruction_text', sa.String(length=150), nullable=False),
     sa.Column('recipeId', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['recipeId'], ['recipes.id'], ),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('recipeId')
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('tags',
     sa.Column('id', sa.Integer(), nullable=False),

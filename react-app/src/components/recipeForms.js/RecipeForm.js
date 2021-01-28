@@ -23,8 +23,14 @@ export default function RecipeForm({ user }) {
             cookTime,
             image,
         });
+        if (!recipe.error) {
+            setRecipe(recipe);
+        } else {
+            window.alert(
+                recipe.error.fields[0] + ": " + recipe.error.messages[0]
+            );
+        }
 
-        setRecipe(recipe);
         return;
     };
 
@@ -34,7 +40,10 @@ export default function RecipeForm({ user }) {
                 <>
                     <div className="about_recipe-form-container">
                         <form onSubmit={handleSubmit}>
-                            <Col className="recipe_input-wrapper">
+                            <Col
+                                style={{ paddingLeft: "0", marginTop: "25px" }}
+                                className="recipe_input-wrapper"
+                            >
                                 <label className="recipe_form-label">
                                     Title
                                 </label>
@@ -43,7 +52,10 @@ export default function RecipeForm({ user }) {
                                     className="recipe_form-input"
                                 ></input>
                             </Col>
-                            <Col className="recipe_input-wrapper">
+                            <Col
+                                style={{ paddingLeft: "0", marginTop: "20px" }}
+                                className="recipe_input-wrapper"
+                            >
                                 <label className="recipe_form-label">
                                     Description
                                 </label>
@@ -54,7 +66,10 @@ export default function RecipeForm({ user }) {
                                     className="recipe_form-input"
                                 ></input>
                             </Col>
-                            <Col className="recipe_input-wrapper">
+                            <Col
+                                style={{ paddingLeft: "0", marginTop: "20px" }}
+                                className="recipe_input-wrapper"
+                            >
                                 <label className="recipe_form-label">
                                     Time To Cook
                                 </label>
@@ -65,7 +80,10 @@ export default function RecipeForm({ user }) {
                                     className="recipe_form-input"
                                 ></input>
                             </Col>
-                            <Col className="recipe_input-wrapper">
+                            <Col
+                                style={{ paddingLeft: "0", marginTop: "20px" }}
+                                className="recipe_input-wrapper"
+                            >
                                 <label className="recipe_form-label">
                                     Image
                                 </label>

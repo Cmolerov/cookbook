@@ -23,6 +23,7 @@ def validation_errors_to_error_messages(validation_errors):
 def create_instruction():
     form = InstructionForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+    print(form.data)
     if form.validate_on_submit():
         instruction = Instructions(
             list_order=form.data["list_order"],

@@ -1,10 +1,10 @@
 from flask import Blueprint, jsonify, request
+from flask_login import current_user
 from ..models.db import db
-from ..models.instructions import Instructions
-from ..forms.instruction_form import InstructionForm
+from ..models.ingredients import Ingredients
+from ..forms.ingredient_form import IngredientForm
 from ..models.user import User
-
-instruction_routes = Blueprint('instructions', __name__)
+ingredient_routes = Blueprint("ingredients", __name__)
 
 
 def validation_errors_to_error_messages(validation_errors):
@@ -19,17 +19,19 @@ def validation_errors_to_error_messages(validation_errors):
     return errorMessages
 
 
-@instruction_routes.route("/", methods=["POST"])
-def create_instruction():
-    form = InstructionForm()
+@ingredient_routes.route("/", methods=["POST"])
+def create_ingredients():
+    form = IngredientForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+    print(form.data)
     if form.validate_on_submit():
-        instruction = Instructions(
-            list_order=form.data["list_order"],
-            instruction_text=form.data["instruction_text"],
-            recipeId=form.data["recipeId"],)
-        db.session.add(instruction)
+        ingredient = Ingredients(
+            measurement=form.data["measurement"],
+            product=form.data["product"],
+            measurementType=form.data["measurement_type"],
+            recipeId=form.data["recipeId"])
+        db.session.add(ingredient)
         db.session.commit()
-        return jsonify(instruction.to_dict())
+        return jsonify(ingredient.to_dict())
     else:
         return jsonify({'error': validation_errors_to_error_messages(form.errors)}), 401

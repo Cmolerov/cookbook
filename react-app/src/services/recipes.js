@@ -56,3 +56,13 @@ export const getAllRecipes = async () => {
     });
     return response.json();
 };
+
+export const getRecipe = async (recipeId) => {
+    const response = await fetch(`/api/recipes/${recipeId}`, {
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+
+    return await response.json();
+};

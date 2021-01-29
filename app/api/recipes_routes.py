@@ -25,6 +25,15 @@ def get_recipes():
     return jsonify([recipe.to_dict() for recipe in recipes])
 
 
+@recipe_routes.route("/<int:id>")
+def get_recipe(id):
+    recipe = Recipes.query.get(id)
+    if recipe:
+        return jsonify(recipe.to_dict())
+    else:
+        return ({"error": "error"})
+
+
 @recipe_routes.route("/", methods=["POST"])
 def create_recipe():
     form = RecipeForm()

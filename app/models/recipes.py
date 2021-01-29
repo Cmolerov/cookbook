@@ -35,5 +35,8 @@ class Recipes(db.Model):
             "title": self.title,
             "description": self.description,
             "cookTime": self.cookTime,
-            "image": self.image
+            "image": self.image,
+            "instructions": [instruction.to_dict() for instruction in self.instructions],
+            "ingredients": [ingredient.to_dict() for ingredient in self.ingredients]
+
         }

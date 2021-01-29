@@ -234,7 +234,7 @@ body {
     background-color: #a3d6df;
     margin-top: 50px;
     margin-left: 15px;
-    overflow-x: scroll;
+    overflow: hidden scroll;
     display: flex;
     flex-flow: row wrap;
 }
@@ -374,11 +374,19 @@ body {
 .single_recipe-title {
     margin: 10px;
     text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    font-size: 35px;
+    color: #427386;
 }
 .single_recipe-header {
     margin-top: 10px;
     margin-left: 10px;
     text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    font-size: 35px;
+    color: #427386;
 }
 
 .single_recipe-img {
@@ -395,6 +403,46 @@ body {
 /* .instruction_list-order {
     margin-right: 10px;
 } */
+/* ----------------------------my recipes------------------------------- */
+/* .myRecipes-container {
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+        rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    overflow: hidden scroll;
+    margin-top: 100px;
+    margin-left: 50px;
+} */
+.myRecipes-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+}
+
+.myRecipes_title {
+    margin-top: 25px;
+    /* margin-right: 600px; */
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    font-size: 35px;
+    color: #427386;
+}
+
+.myRecipes_content-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-top: 10px;
+    width: 85%;
+
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+        rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    overflow: hidden scroll;
+}
+
 /* ----------------------------footer------------------------------- */
 /* .github_icon {
     background-size: cover;

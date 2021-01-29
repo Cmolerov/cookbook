@@ -228,11 +228,15 @@ body {
     justify-content: center;
 }
 .homePage_recipes-container {
+    padding: 0;
     height: 85%;
     width: 90%;
     background-color: #a3d6df;
     margin-top: 50px;
     margin-left: 15px;
+    overflow-x: scroll;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 /* ----------------------------create recipe------------------------------- */
@@ -294,12 +298,23 @@ body {
     align-content: center;
 }
 
-
 /* ----------------------------instructions form------------------------------- */
 /* .instructions-input {
     width: 75%;
 } */
+/* ----------------------------recipes card------------------------------- */
+.recipe-card {
+    margin: 15px 30px 10px 20px;
+    height: 200px;
+    width: 150px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+        rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
 
+.recipe-card_img {
+    height: 100px;
+    width: 150px;
+}
 
 /* ----------------------------footer------------------------------- */
 /* .github_icon {

@@ -19,6 +19,12 @@ def validation_errors_to_error_messages(validation_errors):
     return errorMessages
 
 
+@recipe_routes.route("/")
+def get_recipes():
+    recipes = Recipes.query.all()
+    return jsonify([recipe.to_dict() for recipe in recipes])
+
+
 @recipe_routes.route("/", methods=["POST"])
 def create_recipe():
     form = RecipeForm()

@@ -315,6 +315,9 @@ body {
     height: 100px;
     width: 150px;
 }
+.recipe-card_title {
+    margin: 5px;
+}
 
 /* ----------------------------footer------------------------------- */
 /* .github_icon {

@@ -7,10 +7,13 @@ export default function RecipesCard({ recipe }) {
             <div className="recipe-card">
                 <img className="recipe-card_img" src={recipe.image}></img>
                 <label className="recipe-card_title">{recipe.title}</label>
-                <label className="recipe-card_description">
+                {/* <label className="recipe-card_description">
                     {recipe.description}
+                </label> */}
+                <br />
+                <label className="recipe-card_time">
+                    {recipe.cookTime} min
                 </label>
-                <label className="recipe-card_time">{recipe.cookTime} min</label>
             </div>
         </div>
     );

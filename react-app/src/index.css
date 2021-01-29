@@ -345,7 +345,7 @@ body {
     flex-direction: row;
     margin: 0px;
     padding: 0px;
-    border-top: 1px solid black;
+    border-top: 1px solid #a3d6df;
 }
 
 .single_recipe-left {
@@ -361,14 +361,14 @@ body {
     /* background-color: blue; */
     width: 45%;
     height: 100%;
-    border-left: 1px solid black;
+    border-left: 1px solid #a3d6df;
     text-align: center;
 }
 .single_recipe-right {
     /* background-color: red; */
     width: 45%;
     height: 100%;
-    border-left: 1px solid black;
+    border-left: 1px solid #a3d6df;
     text-align: center;
 }
 .single_recipe-title {

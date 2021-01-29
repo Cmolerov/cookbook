@@ -17,6 +17,7 @@ import WelcomePage from "./components/WelcomePage";
 import HomePage from "./components/HomePage";
 import Profile from "./components/Profile";
 import CreateRecipe from "./components/CreateRecipe";
+import SingleRecipe from "./components/SingleRecipe";
 
 function App() {
     const [authenticated, setAuthenticated] = useState(false);
@@ -91,11 +92,11 @@ function App() {
                     <HomePage />
                 </ProtectedRoute>
                 <ProtectedRoute
-                    path="/"
+                    path="/recipes/:id"
                     exact={true}
                     authenticated={authenticated}
                 >
-                    <HomePage />
+                    <SingleRecipe/>
                 </ProtectedRoute>
                 <ProtectedRoute
                     path="/profile"

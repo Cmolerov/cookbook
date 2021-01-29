@@ -21,12 +21,13 @@ class Recipes(db.Model):
     instructions = db.relationship("Instructions", back_populates="recipes")
     ingredients = db.relationship("Ingredients", back_populates="recipes")
 
-    def __init__(self, userId, title, description, cookTime, image):
+    def __init__(self, userId, title, description, cookTime, image, instructions):
         self.userId = userId
         self.title = title
         self.description = description
         self.cookTime = cookTime
         self.image = image
+        self.instructions = instructions
 
     def to_dict(self):
         return {
@@ -35,5 +36,6 @@ class Recipes(db.Model):
             "title": self.title,
             "description": self.description,
             "cookTime": self.cookTime,
-            "image": self.image
+            "image": self.image,
+            "instructions": [instruction.to_dict() for instruction in self.instructions]
         }

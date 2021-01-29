@@ -4,8 +4,6 @@ import Footer from "./Footer";
 import { getAllRecipes } from "../services/recipes";
 import RecipesCard from "../RecipesCard";
 
-
-
 export default function HomePage() {
     const [loading, setLoading] = useState(false);
     const [recipes, setRecipes] = useState(null);
@@ -23,8 +21,11 @@ export default function HomePage() {
                 <Col className="homePage_content-container">
                     <div className="homePage_recipes-container" fluid>
                         {recipes &&
-                            recipes.map((recipe) => (
-                                <RecipesCard recipe={recipe}></RecipesCard>
+                            recipes.map((recipe, idx) => (
+                                <RecipesCard
+                                    key={idx}
+                                    recipe={recipe}
+                                ></RecipesCard>
                             ))}
                     </div>
                 </Col>

@@ -35,3 +35,9 @@ def create_ingredients():
         return jsonify(ingredient.to_dict())
     else:
         return jsonify({'error': validation_errors_to_error_messages(form.errors)}), 401
+
+
+@ingredient_routes.route("/<int:id>")
+def get_instructions(id):
+    ingredients = Ingredients.query.filter_by(id=recipeId).all()
+    return jsonify(ingredients.to_dict())

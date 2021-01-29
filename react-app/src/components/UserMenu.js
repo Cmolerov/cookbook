@@ -95,7 +95,7 @@ export default function UserMenu({ authenticated, setAuthenticated }) {
         history.push("/welcome");
     };
     const onProfile = async (e) => {
-        history.push("/profile/1");
+        history.push("/profile/2");
     };
     const onCreate = async (e) => {
         history.push("/createrecipe");

@@ -38,7 +38,10 @@ export default function SingleRecipe() {
                             src={recipe?.image}
                         ></img>
 
-                        <p>{recipe.description}</p>
+                        <p>
+                            Descritpion: <br />
+                            <span>{recipe.description}</span>
+                        </p>
                         <p>Time to cook: {recipe.cookTime} min</p>
                     </div>
                     <div className="single_recipe-middle">

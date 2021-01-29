@@ -36,7 +36,7 @@ export default function SingleRecipe() {
                     <div className="single_recipe-left">
                         <img
                             className="single_recipe-img"
-                            src={recipe.image}
+                            src={recipe?.image}
                         ></img>
 
                         <p>{recipe.description}</p>

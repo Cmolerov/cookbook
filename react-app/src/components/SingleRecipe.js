@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getRecipe } from "../services/recipes";
 import { getInstructions } from "../services/instructions";
 import { getIngredients } from "../services/ingredients";
+import { Container, Col, Row } from "react-bootstrap";
 
 export default function SingleRecipe() {
     const { id } = useParams();
@@ -26,37 +27,54 @@ export default function SingleRecipe() {
     }
 
     return (
-        <div>
-            <img className="recipe-card_img" src={recipe.image}></img>
-            <label className="recipe-card_title">{recipe.title}</label>
-            {/* <label className="recipe-card_description">
-                    {recipe.description}
-                </label> */}
-            <br />
-            <label className="recipe-card_time">{recipe.cookTime} min</label>
-            {/* <div>
-                <label>{instructions.list_order}</label>
-                <label>{instructions.instructions_text}</label>
-            </div> */}
-            <div>
-                {instructions &&
-                    instructions.map((instruction, idx) => (
-                        <div>
-                            <label>{instruction.list_order}</label>
-                            <label>{instruction.instruction_text}</label>
+        <Container className="single_recipe-main" fluid>
+            <Row className="single_recipe-container">
+                <div className="top_row col-7">
+                    <h3 className="single_recipe-header">{recipe.title}</h3>
+                </div>
+                <Col className="single_recipe-display">
+                    <div className="single_recipe-left">
+                        <img
+                            className="single_recipe-img"
+                            src={recipe.image}
+                        ></img>
+
+                        <p>{recipe.description}</p>
+                        <p>Time to cook: {recipe.cookTime} min</p>
+                    </div>
+                    <div className="single_recipe-middle">
+                        <h3 className="single_recipe-title">Ingredients</h3>
+                        <div className="content_container">
+                            {ingredients &&
+                                ingredients.map((ingredient, idx) => (
+                                    <div>
+                                        <label>
+                                            {ingredient.measurement}{" "}
+                                            {ingredient.measurementType}
+                                            {" of "}
+                                            {ingredient.product}
+                                        </label>
+                                    </div>
+                                ))}
                         </div>
-                    ))}
-            </div>
-            <div>
-                {ingredients &&
-                    ingredients.map((ingredient, idx) => (
-                        <div>
-                            <label>{ingredient.measurement}</label>
-                            <label>{ingredient.measurementType}</label>
-                            <label>{ingredient.product}</label>
+                    </div>
+                    <div className="single_recipe-right">
+                        <h3 className="single_recipe-title">Instructions</h3>
+                        <div className="content_container">
+                            {instructions &&
+                                instructions.map((instruction, idx) => (
+                                    <div>
+                                        <label className="instruction_list-order">
+                                            {instruction.list_order}
+                                            {". "}
+                                            {instruction.instruction_text}
+                                        </label>
+                                    </div>
+                                ))}
                         </div>
-                    ))}
-            </div>
-        </div>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
     );
 }

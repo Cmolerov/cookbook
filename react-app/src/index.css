@@ -319,6 +319,82 @@ body {
     margin: 5px;
 }
 
+/* ----------------------------single recipe------------------------------- */
+.single_recipe-main {
+    display: flex;
+    justify-content: center;
+    background-image: url("./images/ingredback.jpg");
+    background-size: cover;
+    height: calc(100vh - 89px);
+}
+.background-img {
+}
+.single_recipe-container {
+    margin-top: 80px;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    width: 75%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+}
+
+.single_recipe-display {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+    border-top: 1px solid black;
+}
+
+.single_recipe-left {
+    /* background-color: #2bb673; */
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+.single_recipe-middle {
+    /* background-color: blue; */
+    width: 45%;
+    height: 100%;
+    border-left: 1px solid black;
+    text-align: center;
+}
+.single_recipe-right {
+    /* background-color: red; */
+    width: 45%;
+    height: 100%;
+    border-left: 1px solid black;
+    text-align: center;
+}
+.single_recipe-title {
+    margin: 10px;
+    text-transform: uppercase;
+}
+.single_recipe-header {
+    margin-top: 10px;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+.single_recipe-img {
+    margin-top: 10px;
+    height: 250px;
+    width: 250px;
+}
+.content_container {
+    overflow-y: hidden;
+}
+.top_row {
+    height: 1px;
+}
+/* .instruction_list-order {
+    margin-right: 10px;
+} */
 /* ----------------------------footer------------------------------- */
 /* .github_icon {
     background-size: cover;

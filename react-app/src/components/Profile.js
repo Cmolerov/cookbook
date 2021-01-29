@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { getCreatedRecipes } from "../services/user";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import RecipesCard from "../RecipesCard";
+import RecipesCard from "./RecipesCard";
 
 export default function Profile() {
     const { userId } = useParams();

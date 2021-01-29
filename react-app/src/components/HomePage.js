@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Footer from "./Footer";
 import { getAllRecipes } from "../services/recipes";
-import RecipesCard from "../RecipesCard";
+import RecipesCard from "./RecipesCard";
 
 export default function HomePage() {
     const [loading, setLoading] = useState(false);

@@ -80,7 +80,11 @@ export default function InstructionForm({ recipe }) {
                             </button>
                         )}
                     </form>
-                    <div>
+                    <div
+                        style={{
+                            overflow: "hidden scroll",
+                        }}
+                    >
                         {prev &&
                             prev.map(({ listOrder, instruction }) => (
                                 <>

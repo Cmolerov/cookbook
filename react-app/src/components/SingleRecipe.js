@@ -29,11 +29,10 @@ export default function SingleRecipe() {
     return (
         <Container className="single_recipe-main" fluid>
             <Row className="single_recipe-container">
-                <div className="top_row col-7">
-                    <h3 className="single_recipe-header">{recipe.title}</h3>
-                </div>
+                {/* <div className="top_row col-5"></div> */}
                 <Col className="single_recipe-display">
                     <div className="single_recipe-left">
+                        <h3 className="single_recipe-header">{recipe.title}</h3>
                         <img
                             className="single_recipe-img"
                             src={recipe?.image}
@@ -47,7 +46,7 @@ export default function SingleRecipe() {
                         <div className="content_container">
                             {ingredients &&
                                 ingredients.map((ingredient, idx) => (
-                                    <div>
+                                    <div className="container_ingredients">
                                         <label>
                                             {ingredient.measurement}{" "}
                                             {ingredient.measurementType}
@@ -63,7 +62,7 @@ export default function SingleRecipe() {
                         <div className="content_container">
                             {instructions &&
                                 instructions.map((instruction, idx) => (
-                                    <div>
+                                    <div className="container_ingredients">
                                         <label className="instruction_list-order">
                                             {instruction.list_order}
                                             {". "}

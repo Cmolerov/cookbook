@@ -309,6 +309,7 @@ body {
     width: 150px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
         rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    text-align: center;
 }
 
 .recipe-card_img {
@@ -317,6 +318,11 @@ body {
 }
 .recipe-card_title {
     margin: 5px;
+}
+
+.recipe-link {
+    text-decoration: none;
+    color: black;
 }
 
 /* ----------------------------single recipe------------------------------- */
@@ -395,8 +401,12 @@ body {
     width: 250px;
 }
 .content_container {
-    overflow-y: hidden;
+    text-align: justify;
+    margin-left: 5px;
 }
+/* .container_ingredients {
+    overflow: hidden scroll;
+} */
 .top_row {
     height: 1px;
 }
@@ -435,7 +445,7 @@ body {
     margin-top: 10px;
     width: 85%;
 
-    height: 500px;
+    height: 600px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
         rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     overflow: hidden scroll;

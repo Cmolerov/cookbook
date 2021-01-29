@@ -95,7 +95,7 @@ export default function UserMenu({ authenticated, setAuthenticated }) {
         history.push("/welcome");
     };
     const onProfile = async (e) => {
-        history.push("/profile");
+        history.push("/profile/1");
     };
     const onCreate = async (e) => {
         history.push("/createrecipe");
@@ -127,7 +127,7 @@ export default function UserMenu({ authenticated, setAuthenticated }) {
                 TransitionComponent={Fade}
             >
                 <UserMenuPopUpItem onClick={onProfile}>
-                    Profile
+                    My Recipes
                 </UserMenuPopUpItem>
                 <UserMenuPopUpItem onClick={onCreate}>
                     Create Recipe

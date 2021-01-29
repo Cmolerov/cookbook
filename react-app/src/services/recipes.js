@@ -47,3 +47,12 @@ export const createIngredient = async (formData) => {
         console.log(e);
     }
 };
+
+export const getAllRecipes = async () => {
+    const response = await fetch("/api/recipes/", {
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+    return response.json();
+};

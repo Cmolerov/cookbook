@@ -17,7 +17,7 @@ export default function HomePage() {
     return (
         <Container className="homePage_wrapper" fluid>
             <Row>
-                <Col className="homePage_sidebar col-2">
+                <Col className="homePage_sidebar col-1">
                     <div className="timeOfDay">
                         <h2>Meal Time</h2>
                         {/* <label>

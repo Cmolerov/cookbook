@@ -14,7 +14,7 @@ export default function WelcomePage({ setAuthenticated }) {
             history.push("/");
         }
     };
-    console.log(window.location.pathname);
+    // console.log(window.location.pathname);
     return (
         <Container className="welcome_wrapper" fluid>
             <Row>

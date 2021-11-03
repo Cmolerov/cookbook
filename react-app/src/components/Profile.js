@@ -6,8 +6,11 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import RecipesCard from "./RecipesCard";
 
-export default function Profile() {
+export default function Profile(props) {
     const { userId } = useParams();
+    const { user } = props;
+    console.log(userId);
+    console.log(user.id);
     const [loading, setLoading] = useState(false);
     const [createdRecipes, setCreatedRecipes] = useState(null);
 

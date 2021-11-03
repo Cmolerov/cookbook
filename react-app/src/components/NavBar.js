@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // style
 import "./Navbar.css";
 import User from "./User";
-const NavBar = ({ setAuthenticated, authenticated }) => {
+const NavBar = ({ setAuthenticated, authenticated, user }) => {
     return (
         <Container className="nav-wrapper_welcome" fluid>
             <Row>
@@ -23,6 +23,7 @@ const NavBar = ({ setAuthenticated, authenticated }) => {
                             <UserMenu
                                 setAuthenticated={setAuthenticated}
                                 className="user-menu"
+                                user={user}
                             />
                         </>
                     ) : (

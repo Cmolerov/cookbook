@@ -103,7 +103,7 @@ function App() {
                     exact={true}
                     authenticated={authenticated}
                 >
-                    <Profile user={user} />
+                    <Profile />
                 </ProtectedRoute>
                 <ProtectedRoute
                     path="/createrecipe"

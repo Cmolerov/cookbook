@@ -73,7 +73,7 @@ const UserMenuContainerAuth = styled.div`
     margin-left: 800px;
 `;
 
-export default function UserMenu({ authenticated, setAuthenticated }) {
+export default function UserMenu({ authenticated, setAuthenticated, user }) {
     const history = useHistory();
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -95,7 +95,7 @@ export default function UserMenu({ authenticated, setAuthenticated }) {
         history.push("/welcome");
     };
     const onProfile = async (e) => {
-        history.push("/profile/2");
+        history.push(`/profile/${user.id}`);
     };
     const onCreate = async (e) => {
         history.push("/createrecipe");

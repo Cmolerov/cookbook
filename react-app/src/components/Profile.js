@@ -8,6 +8,9 @@ import RecipesCard from "./RecipesCard";
 
 export default function Profile() {
     const { userId } = useParams();
+    // const { user } = props;
+    // console.log(userId);
+    // console.log(user.id);
     const [loading, setLoading] = useState(false);
     const [createdRecipes, setCreatedRecipes] = useState(null);
 

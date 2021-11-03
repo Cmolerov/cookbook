@@ -24,7 +24,6 @@ function App() {
     const [loaded, setLoaded] = useState(false);
     const [user, setUser] = useState({});
     const history = useHistory();
-
     useEffect(() => {
         (async () => {
             const userData = await authenticate();
@@ -34,7 +33,7 @@ function App() {
             }
             setLoaded(true);
         })();
-    }, []);
+    }, [authenticated]);
 
     useEffect(() => {
         if (!authenticated) return <Redirect to="/welcome" />;
@@ -49,6 +48,7 @@ function App() {
             <NavBar
                 setAuthenticated={setAuthenticated}
                 authenticated={authenticated}
+                user={user}
             />
 
             <Switch>
@@ -96,7 +96,7 @@ function App() {
                     exact={true}
                     authenticated={authenticated}
                 >
-                    <SingleRecipe/>
+                    <SingleRecipe />
                 </ProtectedRoute>
                 <ProtectedRoute
                     path="/profile/:userId"

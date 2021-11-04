@@ -223,7 +223,7 @@ body {
 }
 .timeOfDay h2 {
     font-weight: 500;
-    font-size:medium;
+    font-size: medium;
 }
 
 .homePage_content-container {
@@ -467,6 +467,6 @@ body {
 
 .footer {
     height: 50px;
-    /* background-color: Red; */
+    background-color: #427386;
     border-top: 1px solid #a3d6df;
 }

@@ -71,7 +71,7 @@ export default function RecipeForm({ user }) {
                                 className="recipe_input-wrapper"
                             >
                                 <label className="recipe_form-label">
-                                    Time To Cook
+                                    Time To Cook (min)
                                 </label>
                                 <input
                                     onChange={(e) =>

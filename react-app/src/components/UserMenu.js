@@ -101,6 +101,10 @@ export default function UserMenu({ authenticated, setAuthenticated, user }) {
         history.push("/createrecipe");
     };
 
+    const onHome = async (e) => {
+        history.push("/");
+    };
+
     return (
         <>
             <UserMenuContainerAuth
@@ -126,6 +130,7 @@ export default function UserMenu({ authenticated, setAuthenticated, user }) {
                 onClose={handleClose}
                 TransitionComponent={Fade}
             >
+                <UserMenuPopUpItem onClick={onHome}>Home</UserMenuPopUpItem>
                 <UserMenuPopUpItem onClick={onProfile}>
                     My Recipes
                 </UserMenuPopUpItem>

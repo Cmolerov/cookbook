@@ -37,7 +37,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
         <Container className="signup_main-container" fluid>
             <Row>
                 <Col className="login_left-container col-7"></Col>
-                <Col className="signup_right-container col-5">
+                <Col className="signup_right-container col-md-5 col-sm-12 col-xs-12">
                     <div className="signup_form-container">
                         <form className="form_container" onSubmit={onLogin}>
                             <div>

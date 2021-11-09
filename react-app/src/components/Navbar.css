@@ -2,12 +2,21 @@
     display: flex;
     list-style: none;
     justify-content: flex-end;
-    height: 100%;
     /* border-bottom: 2px solid #4e7f91; */
 }
 .nav-links {
     margin-top: 35px;
     margin-left: 25px;
+}
+
+.nav_bar-container {
+    display: flex;
+    align-items: center;
+    max-width: 100vw;
+}
+
+.fas.fa-utensils {
+    font-size: 1.5rem;
 }
 
 .nav-wrapper_welcome {
@@ -17,6 +26,22 @@
     border-bottom: 1px solid #315968;
 }
 .nav-wrapper_login {
+}
+
+.link-wrapper {
+    /* background-color: blue; */
+    margin-left: auto;
+}
+
+@media only screen and (max-width: 700px) {
+    .navbar-container {
+        position: relative;
+        right: 10px;
+        bottom: 5px;
+    }
+    .nav-links {
+        margin-left: 5px;
+    }
 }
 
 .nav-wrapper_signup {
@@ -50,7 +75,7 @@ a:hover {
     text-decoration: none;
     color: #548396;
 }
-
+/* 
 @media (max-width: 768px) {
     .logo-wrapper {
         justify-content: center;
@@ -70,11 +95,11 @@ a:hover {
         height: 55px;
         padding-right: 40px !important;
     }
-}
-.user-menu {
+} */
+/* .user-menu {
     justify-self: flex-end;
     margin-left: 100px;
-}
+} */
 
 .logo-wrapper {
     margin-bottom: 15px;

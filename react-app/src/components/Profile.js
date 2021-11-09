@@ -28,14 +28,24 @@ export default function Profile() {
     }
 
     return (
-        <div className="myRecipes-container">
-            <h1 className="myRecipes_title">My Recipes</h1>
-            <div className="myRecipes_content-container">
-                {createdRecipes &&
-                    createdRecipes.map((recipe, idx) => (
-                        <RecipesCard key={idx} recipe={recipe}></RecipesCard>
-                    ))}
-            </div>
-        </div>
+        <>
+            <Container className="homePage_wrapper" fluid>
+                <Row>
+                    <Col className="homePage_content-container">
+                        <div className="homePage_all-recipes">My Recipes</div>
+                        <div className="homePage_recipes-container" fluid>
+                            {createdRecipes &&
+                                createdRecipes.map((recipe, idx) => (
+                                    <RecipesCard
+                                        key={idx}
+                                        recipe={recipe}
+                                    ></RecipesCard>
+                                ))}
+                        </div>
+                    </Col>
+                </Row>
+                {/* <Row className="footer row-12">footer</Row> */}
+            </Container>
+        </>
     );
 }

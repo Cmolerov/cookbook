@@ -70,7 +70,13 @@ const UserMenuContainerAuth = styled.div`
     justify-content: flex-end;
     margin-top: 15px;
     margin-bottom: 15px;
-    margin-left: 800px;
+    margin-left: 70vw;
+    @media (max-width: 800px) {
+        margin-left: 50vw
+    }
+    @media (max-width: 560px) {
+        margin-left: 40vw
+    }
 `;
 
 export default function UserMenu({ authenticated, setAuthenticated, user }) {
@@ -101,6 +107,10 @@ export default function UserMenu({ authenticated, setAuthenticated, user }) {
         history.push("/createrecipe");
     };
 
+    const onHome = async (e) => {
+        history.push("/");
+    };
+
     return (
         <>
             <UserMenuContainerAuth
@@ -126,6 +136,7 @@ export default function UserMenu({ authenticated, setAuthenticated, user }) {
                 onClose={handleClose}
                 TransitionComponent={Fade}
             >
+                <UserMenuPopUpItem onClick={onHome}>Home</UserMenuPopUpItem>
                 <UserMenuPopUpItem onClick={onProfile}>
                     My Recipes
                 </UserMenuPopUpItem>

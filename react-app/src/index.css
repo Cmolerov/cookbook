@@ -597,3 +597,18 @@ body {
     background-color: #427386;
     border-top: 1px solid #a3d6df;
 }
+
+.footer-div {
+    height: 50px;
+    background-color: #427386;
+    border-top: 1px solid #a3d6df;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    justify-content: space-around;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: white;
+}

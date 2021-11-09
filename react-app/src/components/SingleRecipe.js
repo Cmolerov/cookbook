@@ -28,22 +28,19 @@ export default function SingleRecipe() {
 
     return (
         <Container className="single_recipe-main" fluid>
+            <div className="single_recipe-left">
+                <h3 className="single_recipe-header">{recipe.title}</h3>
+                <img className="single_recipe-img" src={recipe?.image}></img>
+
+                <p>
+                    Descritpion: <br />
+                    <span>{recipe.description}</span>
+                </p>
+                <p>Time to cook: {recipe.cookTime} min</p>
+            </div>
             <Row className="single_recipe-container">
                 {/* <div className="top_row col-5"></div> */}
                 <Col className="single_recipe-display">
-                    <div className="single_recipe-left">
-                        <h3 className="single_recipe-header">{recipe.title}</h3>
-                        <img
-                            className="single_recipe-img"
-                            src={recipe?.image}
-                        ></img>
-
-                        <p>
-                            Descritpion: <br />
-                            <span>{recipe.description}</span>
-                        </p>
-                        <p>Time to cook: {recipe.cookTime} min</p>
-                    </div>
                     <div className="single_recipe-middle">
                         <h3 className="single_recipe-title">Ingredients</h3>
                         <div className="content_container">

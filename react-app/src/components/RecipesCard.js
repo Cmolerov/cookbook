@@ -13,7 +13,7 @@ export default function RecipesCard({ recipe }) {
                 </label> */}
                     <br />
                     <label className="recipe-card_time">
-                        {recipe.cookTime} min
+                        <i className="fas fa-clock"/>{recipe.cookTime} min
                     </label>
                 </div>
             </Link>

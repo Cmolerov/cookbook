@@ -10,14 +10,14 @@ import "./Navbar.css";
 import User from "./User";
 const NavBar = ({ setAuthenticated, authenticated, user }) => {
     return (
-        <Container className="nav-wrapper_welcome" fluid>
-            <Row>
-                <Col className="logo-wrapper">
+        <div className="nav-wrapper_welcome" fluid>
+            <div className="nav_bar-container">
+                <div className="logo-wrapper">
                     <NavLink to="/" exact={true}>
                         <i className="fas fa-utensils icon"> Umami</i>
                     </NavLink>
-                </Col>
-                <Col className="link-wrapper">
+                </div>
+                <div className="link-wrapper">
                     {authenticated ? (
                         <>
                             <UserMenu
@@ -72,9 +72,9 @@ const NavBar = ({ setAuthenticated, authenticated, user }) => {
                             </ul>
                         </>
                     )}
-                </Col>
-            </Row>
-        </Container>
+                </div>
+            </div>
+        </div>
     );
 };
 

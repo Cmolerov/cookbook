@@ -4,10 +4,13 @@ import { getRecipe } from "../services/recipes";
 import { getInstructions } from "../services/instructions";
 import { getIngredients } from "../services/ingredients";
 import { Container, Col, Row } from "react-bootstrap";
+import { deleteRecipe } from "../services/recipes.js";
+import { useHistory } from "react-router-dom";
 
 export default function SingleRecipe() {
     const { id } = useParams();
     const [loading, setLoading] = useState(false);
+    const history = useHistory();
     const [recipe, setRecipe] = useState(null);
     const [instructions, setInstructions] = useState(null);
     const [ingredients, setIngredients] = useState(null);
@@ -26,8 +29,10 @@ export default function SingleRecipe() {
         return <h3>loading</h3>;
     }
 
-    console.log(recipe.instructions)
-    console.log(recipe.ingredients)
+    const handleDelete = async (e) => {
+        deleteRecipe(id);
+        history.push("/");
+    };
 
     return (
         <Container className="single_recipe-main" fluid>
@@ -40,6 +45,9 @@ export default function SingleRecipe() {
                     <span>{recipe.description}</span>
                 </p>
                 <p>Time to cook: {recipe.cookTime} min</p>
+                <form onSubmit={handleDelete}>
+                    <button type="submit">Delete</button>
+                </form>
             </div>
             <Row className="single_recipe-container">
                 {/* <div className="top_row col-5"></div> */}

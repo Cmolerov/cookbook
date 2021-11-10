@@ -96,7 +96,7 @@ function App() {
                     exact={true}
                     authenticated={authenticated}
                 >
-                    <SingleRecipe />
+                    <SingleRecipe user={user} />
                 </ProtectedRoute>
                 <ProtectedRoute
                     path="/profile/:userId"

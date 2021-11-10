@@ -544,6 +544,14 @@ body {
     height: 1px;
     background-color: #2bb673;
 }
+.recipe__delete-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    background-color: rgb(189, 45, 45);
+    color: white;
+}
 
 /* ----------------------------my recipes------------------------------- */
 /* .myRecipes-container {

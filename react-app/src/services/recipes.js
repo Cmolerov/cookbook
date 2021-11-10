@@ -66,3 +66,13 @@ export const getRecipe = async (recipeId) => {
 
     return await response.json();
 };
+
+export const deleteRecipe = async(recipesId) => {
+    const response = await fetch(`/api/recipes/${recipesId}`,{
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+    return await response.json()
+}

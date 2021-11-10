@@ -26,6 +26,9 @@ export default function SingleRecipe() {
         return <h3>loading</h3>;
     }
 
+    console.log(recipe.instructions)
+    console.log(recipe.ingredients)
+
     return (
         <Container className="single_recipe-main" fluid>
             <div className="single_recipe-left">

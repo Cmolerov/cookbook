@@ -5,17 +5,17 @@ import { useHistory } from "react-router-dom";
 import { createIngredient, createInstruction } from "../../services/recipes";
 
 export default function IngredientsForm({ recipe }) {
-    const history = useHistory()
+    const history = useHistory();
     const [listOrder, setListOrder] = useState(1);
     const [ingredient, setIngredient] = useState("");
     const [prev, setPrev] = useState([]);
 
-    const [amount, setAmount] = useState(1);
+    const [amount, setAmount] = useState("");
     const [measurementType, setMeasurementType] = useState("Cup");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        history.push("/")
+        history.push("/");
     };
 
     const onKeyDown = async (e) => {
@@ -28,11 +28,14 @@ export default function IngredientsForm({ recipe }) {
                 product: ingredient,
             });
             if (saved) {
-                setPrev([...prev, { listOrder, ingredient, measurementType, amount }]);
+                setPrev([
+                    ...prev,
+                    { listOrder, ingredient, measurementType, amount },
+                ]);
                 setListOrder(listOrder + 1);
                 setIngredient("");
-                setMeasurementType("Cup")
-                setAmount(1)
+                setMeasurementType("Cup");
+                setAmount(1);
             }
         }
     };
@@ -66,18 +69,27 @@ export default function IngredientsForm({ recipe }) {
                             placeHolder="Amt"
                             className="recipe_form-input instructions-input"
                         ></input>
-                        <input
+                        <select
                             onChange={(e) => setMeasurementType(e.target.value)}
                             value={measurementType}
                             style={{ width: "15%" }}
                             placeHolder="Type"
                             className="recipe_form-input instructions-input"
-                        ></input>
+                        >
+                            <option>Cup</option>
+                            <option>Oz</option>
+                            <option>Tsp</option>
+                            <option>Lb</option>
+                            <option>g</option>
+                            <option>Tbsp</option>
+                            <option>Other</option>
+                        </select>
                         <input
                             value={ingredient}
                             onChange={(e) => setIngredient(e.target.value)}
                             style={{ width: "65%" }}
                             className="recipe_form-input instructions-input"
+                            placeholder="Press Enter to add"
                         ></input>
                     </div>
                 </Col>
@@ -117,8 +129,12 @@ export default function IngredientsForm({ recipe }) {
                                     >
                                         {listOrder}.
                                     </label>
-                                    <span style={{marginRight: "10px"}}>{amount}</span>
-                                    <span style={{marginRight: "10px"}}>{measurementType }</span>
+                                    <span style={{ marginRight: "10px" }}>
+                                        {amount}
+                                    </span>
+                                    <span style={{ marginRight: "10px" }}>
+                                        {measurementType}
+                                    </span>
                                     <span>{ingredient}</span>
                                 </div>
                             </>

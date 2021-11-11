@@ -61,6 +61,7 @@ export default function InstructionForm({ recipe }) {
                                     }
                                     style={{ width: "95%" }}
                                     className="recipe_form-input instructions-input"
+                                    placeholder="Press Enter to add"
                                 ></input>
                             </div>
                         </Col>

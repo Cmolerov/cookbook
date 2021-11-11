@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import { login } from "../../services/auth";
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useHistory } from "react-router-dom";
 // import Row from "react-bootstrap/Row";
 // import Col from "react-bootstrap/Col";
 
@@ -10,6 +11,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     const [errors, setErrors] = useState([]);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const history = useHistory();
 
     const onLogin = async (e) => {
         e.preventDefault();
@@ -32,6 +34,15 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     if (authenticated) {
         return <Redirect to="/" />;
     }
+
+    const handleDemoLogin = async (e) => {
+        e.preventDefault();
+        const user = await login("demo@aa.io", "password");
+        if (!user.errors) {
+            setAuthenticated(true);
+            history.push("/");
+        }
+    };
 
     return (
         <Container className="signup_main-container" fluid>
@@ -76,6 +87,13 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
                                 />
                                 <button className="btn-grad" type="submit">
                                     Login
+                                </button>
+                                <button
+                                    onClick={handleDemoLogin}
+                                    className="btn-grad"
+                                >
+                                    {" "}
+                                    Demo User
                                 </button>
                             </div>
                         </form>

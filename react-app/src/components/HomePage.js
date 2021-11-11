@@ -7,6 +7,7 @@ import RecipesCard from "./RecipesCard";
 export default function HomePage() {
     const [loading, setLoading] = useState(false);
     const [recipes, setRecipes] = useState(null);
+    const [deleteRecipe, setDeletedRecipes] = useState()
     useEffect(() => {
         (async () => {
             const fetchedRecipes = await getAllRecipes();

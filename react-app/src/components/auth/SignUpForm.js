@@ -3,6 +3,8 @@ import { Redirect, Route } from "react-router-dom";
 import { signUp } from "../../services/auth";
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useHistory } from "react-router-dom";
+import { login } from "../../services/auth";
 
 const SignUpForm = ({ authenticated, setAuthenticated }) => {
     const [errors, setErrors] = useState([]);
@@ -10,6 +12,7 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
+    const history = useHistory();
 
     const onSignUp = async (e) => {
         e.preventDefault();
@@ -40,6 +43,14 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
     if (authenticated) {
         return <Redirect to="/" />;
     }
+    const handleDemoLogin = async (e) => {
+        e.preventDefault();
+        const user = await login("demo@aa.io", "password");
+        if (!user.errors) {
+            setAuthenticated(true);
+            history.push("/");
+        }
+    };
 
     return (
         <Container className="signup_main-container" fluid>
@@ -101,6 +112,13 @@ const SignUpForm = ({ authenticated, setAuthenticated }) => {
                             </div>
                             <button className="btn-grad" type="submit">
                                 Sign Up
+                            </button>
+                            <button
+                                onClick={handleDemoLogin}
+                                className="btn-grad"
+                            >
+                                {" "}
+                                Demo User
                             </button>
                         </form>
                     </div>

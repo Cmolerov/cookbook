@@ -46,3 +46,13 @@ def create_recipe():
         return jsonify(recipe.to_dict())
     else:
         return jsonify({'error': validation_errors_to_error_messages(form.errors)}), 401
+          
+@recipe_routes.route("/<int:id>", methods=['DELETE'])
+def delete_recipe(id):
+    recipe = Recipes.query.get(id)
+    if recipe:
+        db.session.delete(recipe)
+        db.session.commit()
+        return jsonify({"success": "success"})
+    else:
+        return jsonify({"error": "error"})

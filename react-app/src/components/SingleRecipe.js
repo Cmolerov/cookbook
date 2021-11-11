@@ -8,7 +8,7 @@ import { deleteRecipe } from "../services/recipes.js";
 import { useHistory } from "react-router-dom";
 
 export default function SingleRecipe(props) {
-    const {user} = props
+    const { user } = props;
     const { id } = useParams();
     const [loading, setLoading] = useState(false);
     const history = useHistory();
@@ -34,9 +34,6 @@ export default function SingleRecipe(props) {
         deleteRecipe(id);
         history.push("/");
     };
-    console.log(recipe.userId)
-    console.log(user.id)
-
     return (
         <Container className="single_recipe-main" fluid>
             <div className="single_recipe-left">
@@ -48,9 +45,15 @@ export default function SingleRecipe(props) {
                     <span>{recipe.description}</span>
                 </p>
                 <p>Time to cook: {recipe.cookTime} min</p>
-                {user.id === recipe.userId ? <form onSubmit={handleDelete}>
-                    <button className="recipe__delete-btn" type="submit">Delete</button>
-                </form> : ""}
+                {user.id === recipe.userId ? (
+                    <form onSubmit={handleDelete}>
+                        <button className="recipe__delete-btn" type="submit">
+                            Delete
+                        </button>
+                    </form>
+                ) : (
+                    ""
+                )}
             </div>
             <Row className="single_recipe-container">
                 {/* <div className="top_row col-5"></div> */}

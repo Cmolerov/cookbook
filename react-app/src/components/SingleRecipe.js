@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getRecipe } from "../services/recipes";
-import { getInstructions } from "../services/instructions";
-import { getIngredients } from "../services/ingredients";
+// import { getInstructions } from "../services/instructions";
+// import { getIngredients } from "../services/ingredients";
 import { Container, Col, Row } from "react-bootstrap";
-import { deleteRecipe } from "../services/recipes.js";
-import { useHistory } from "react-router-dom";
+import { deleteRecipe, getAllRecipes } from "../services/recipes.js";
+import { useHistory, useLocation } from "react-router-dom";
 
 export default function SingleRecipe(props) {
     const { user } = props;
     const { id } = useParams();
     const [loading, setLoading] = useState(false);
     const history = useHistory();
+    const location = useLocation();
+    console.log(location.state.fetchAllRecipes);
     const [recipe, setRecipe] = useState(null);
     const [instructions, setInstructions] = useState(null);
     const [ingredients, setIngredients] = useState(null);
@@ -29,11 +31,13 @@ export default function SingleRecipe(props) {
     if (recipe === null) {
         return <h3>loading</h3>;
     }
-
+    //must wait for a response from the delete to be able to fetch all -> await function
     const handleDelete = async (e) => {
         deleteRecipe(id);
-        history.push("/");
+        getAllRecipes();
+        await history.push("/");
     };
+
     return (
         <Container className="single_recipe-main" fluid>
             <div className="single_recipe-left">
@@ -63,7 +67,10 @@ export default function SingleRecipe(props) {
                         <div className="content_container">
                             {ingredients &&
                                 ingredients.map((ingredient, idx) => (
-                                    <div className="container_ingredients">
+                                    <div
+                                        key={idx}
+                                        className="container_ingredients"
+                                    >
                                         <label>
                                             {ingredient.measurement}{" "}
                                             {ingredient.measurementType}
@@ -79,7 +86,10 @@ export default function SingleRecipe(props) {
                         <div className="content_container">
                             {instructions &&
                                 instructions.map((instruction, idx) => (
-                                    <div className="container_ingredients">
+                                    <div
+                                        key={idx}
+                                        className="container_ingredients"
+                                    >
                                         <label className="instruction_list-order">
                                             {instruction.list_order}
                                             {". "}

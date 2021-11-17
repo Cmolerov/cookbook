@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
     BrowserRouter,
+    HashRouter,
     Route,
     Switch,
     useHistory,
@@ -44,7 +45,7 @@ function App() {
     }
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <NavBar
                 setAuthenticated={setAuthenticated}
                 authenticated={authenticated}
@@ -113,7 +114,7 @@ function App() {
                     <CreateRecipe user={user} />
                 </ProtectedRoute>
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 

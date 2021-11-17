@@ -61,19 +61,23 @@ export default function IngredientsForm({ recipe }) {
                     >
                         <label>{listOrder}.</label>
                         <input
-                            onChange={(e) =>
-                                setAmount(parseInt(e.target.value))
-                            }
+                            onChange={(e) => {
+                                if (e.target.value === "") {
+                                    setAmount(0);
+                                } else {
+                                    setAmount(parseInt(e.target.value));
+                                }
+                            }}
                             value={amount}
                             style={{ width: "10%" }}
-                            placeHolder="Amt"
+                            placeholder="Amt"
                             className="recipe_form-input instructions-input"
                         ></input>
                         <select
                             onChange={(e) => setMeasurementType(e.target.value)}
                             value={measurementType}
                             style={{ width: "15%" }}
-                            placeHolder="Type"
+                            placeholder="Type"
                             className="recipe_form-input instructions-input"
                         >
                             <option>Cup</option>

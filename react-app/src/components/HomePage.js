@@ -7,14 +7,18 @@ import RecipesCard from "./RecipesCard";
 export default function HomePage() {
     const [loading, setLoading] = useState(false);
     const [recipes, setRecipes] = useState(null);
-    const [deleteRecipe, setDeletedRecipes] = useState()
-    useEffect(() => {
-        (async () => {
-            const fetchedRecipes = await getAllRecipes();
+    const [deleteRecipe, setDeletedRecipes] = useState(false);
 
-            setRecipes(fetchedRecipes);
-        })();
+    const fetchAllRecipes = async () => {
+        const fetchedRecipes = await getAllRecipes();
+
+        setRecipes(fetchedRecipes);
+    };
+
+    useEffect(() => {
+        fetchAllRecipes();
     }, []);
+
     return (
         <>
             <Container className="homePage_wrapper" fluid>
@@ -27,6 +31,7 @@ export default function HomePage() {
                                     <RecipesCard
                                         key={idx}
                                         recipe={recipe}
+                                        fetchAllRecipes={fetchAllRecipes}
                                     ></RecipesCard>
                                 ))}
                         </div>

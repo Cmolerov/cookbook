@@ -1,13 +1,13 @@
 import React from "react";
-import { NavLink, Switch } from "react-router-dom";
+import { NavLink } from "react-router-dom"; //switch
 import UserMenu from "./UserMenu";
 import LogoutButton from "./auth/LogoutButton";
-import { Container, Row, Col } from "react-bootstrap";
+// import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 // style
 import "./Navbar.css";
-import User from "./User";
+// import User from "./User";
+
 const NavBar = ({ setAuthenticated, authenticated, user }) => {
     return (
         <div className="nav-wrapper_welcome" fluid>

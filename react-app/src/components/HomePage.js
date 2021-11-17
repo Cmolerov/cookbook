@@ -5,9 +5,9 @@ import { getAllRecipes } from "../services/recipes";
 import RecipesCard from "./RecipesCard";
 
 export default function HomePage() {
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     const [recipes, setRecipes] = useState(null);
-    const [deleteRecipe, setDeletedRecipes] = useState(false);
+
 
     const fetchAllRecipes = async () => {
         const fetchedRecipes = await getAllRecipes();

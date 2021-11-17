@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Redirect, Route } from "react-router-dom";
+import { Redirect } from "react-router-dom"; //Route
 import { signUp } from "../../services/auth";
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";

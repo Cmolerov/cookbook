@@ -10,10 +10,9 @@ import { useHistory, useLocation } from "react-router-dom";
 export default function SingleRecipe(props) {
     const { user } = props;
     const { id } = useParams();
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     const history = useHistory();
-    const location = useLocation();
-    console.log(location.state.fetchAllRecipes);
+    // const location = useLocation();
     const [recipe, setRecipe] = useState(null);
     const [instructions, setInstructions] = useState(null);
     const [ingredients, setIngredients] = useState(null);
@@ -33,16 +32,22 @@ export default function SingleRecipe(props) {
     }
     //must wait for a response from the delete to be able to fetch all -> await function
     const handleDelete = async (e) => {
-        deleteRecipe(id);
-        getAllRecipes();
-        await history.push("/");
+        await deleteRecipe(id);
+        if (deleteRecipe) {
+            getAllRecipes();
+            history.push("/");
+        }
     };
 
     return (
         <Container className="single_recipe-main" fluid>
             <div className="single_recipe-left">
                 <h3 className="single_recipe-header">{recipe.title}</h3>
-                <img className="single_recipe-img" src={recipe?.image}></img>
+                <img
+                    className="single_recipe-img"
+                    alt=""
+                    src={recipe?.image}
+                ></img>
 
                 <p>
                     Descritpion: <br />

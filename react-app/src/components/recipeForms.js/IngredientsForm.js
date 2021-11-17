@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import { createIngredient, createInstruction } from "../../services/recipes";
+import { createIngredient } from "../../services/recipes";
 
 export default function IngredientsForm({ recipe }) {
     const history = useHistory();
@@ -19,7 +19,7 @@ export default function IngredientsForm({ recipe }) {
     };
 
     const onKeyDown = async (e) => {
-        if (e.keyCode == 13) {
+        if (e.keyCode === 13) {
             e.preventDefault();
             let saved = await createIngredient({
                 recipeId: recipe.id,
@@ -97,7 +97,7 @@ export default function IngredientsForm({ recipe }) {
                         ></input>
                     </div>
                 </Col>
-                {prev.length == 0 ? (
+                {prev.length === 0 ? (
                     <button
                         disabled="true"
                         className="recipe_form-Continue-btn"

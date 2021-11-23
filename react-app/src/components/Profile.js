@@ -2,8 +2,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getCreatedRecipes } from "../services/user";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import styled from "styled-components";
+// import { Link } from "react-router-dom";
 import RecipesCard from "./RecipesCard";
 
 export default function Profile() {
@@ -11,7 +11,7 @@ export default function Profile() {
     // const { user } = props;
     // console.log(userId);
     // console.log(user.id);
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     const [createdRecipes, setCreatedRecipes] = useState(null);
 
     const fetchCreateRecipes = async () => {
@@ -21,7 +21,7 @@ export default function Profile() {
 
     useEffect(() => {
         fetchCreateRecipes();
-    }, []);
+    },[]);
 
     if (createdRecipes === null) {
         return <h3>loading</h3>;

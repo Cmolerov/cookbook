@@ -466,7 +466,8 @@ body {
     display: flex;
     flex-direction: row;
     margin: 0px;
-    padding: 2rem;
+    /* padding: 2rem; */
+    padding-bottom: 0%;
     border-top: 1px solid #a3d6df;
 }
 
@@ -499,6 +500,7 @@ body {
     /* border-left: 1px solid #a3d6df; */
     text-align: center;
     padding: 1rem;
+    height: 100%;
 }
 .single_recipe-right {
     /* background-color: red; */

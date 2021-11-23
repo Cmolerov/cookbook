@@ -5,7 +5,7 @@ import { getRecipe } from "../services/recipes";
 // import { getIngredients } from "../services/ingredients";
 import { Container, Col, Row } from "react-bootstrap";
 import { deleteRecipe, getAllRecipes } from "../services/recipes.js";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function SingleRecipe(props) {
     const { user } = props;
@@ -26,7 +26,7 @@ export default function SingleRecipe(props) {
 
     useEffect(() => {
         fetchRecipe();
-    }, []);
+    },[]);
     if (recipe === null) {
         return <h3>loading</h3>;
     }

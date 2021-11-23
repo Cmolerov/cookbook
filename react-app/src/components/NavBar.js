@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom"; //switch
 import UserMenu from "./UserMenu";
-import LogoutButton from "./auth/LogoutButton";
+// import LogoutButton from "./auth/LogoutButton";
 // import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 // style

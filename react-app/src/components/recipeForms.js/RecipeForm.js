@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap"; //Container, Row,
 import { createRecipe } from "../../services/recipes";
-import { useHistory } from "react-router-dom";
 import InstructionForm from "./InstructionForm";
 
 export default function RecipeForm({ user }) {
@@ -11,7 +10,7 @@ export default function RecipeForm({ user }) {
     let [image, setImage] = useState("");
     let [recipe, setRecipe] = useState(null);
     const userId = user && user.id;
-    const history = useHistory();
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();

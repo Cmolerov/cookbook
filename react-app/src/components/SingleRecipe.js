@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getRecipe } from "../services/recipes";
-import { getInstructions } from "../services/instructions";
-import { getIngredients } from "../services/ingredients";
+// import { getInstructions } from "../services/instructions";
+// import { getIngredients } from "../services/ingredients";
 import { Container, Col, Row } from "react-bootstrap";
-import { deleteRecipe } from "../services/recipes.js";
+import { deleteRecipe, getAllRecipes } from "../services/recipes.js";
 import { useHistory } from "react-router-dom";
 
 export default function SingleRecipe(props) {
     const { user } = props;
     const { id } = useParams();
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     const history = useHistory();
+    // const location = useLocation();
     const [recipe, setRecipe] = useState(null);
     const [instructions, setInstructions] = useState(null);
     const [ingredients, setIngredients] = useState(null);
@@ -25,20 +26,28 @@ export default function SingleRecipe(props) {
 
     useEffect(() => {
         fetchRecipe();
-    }, []);
+    },[]);
     if (recipe === null) {
         return <h3>loading</h3>;
     }
-
+    //must wait for a response from the delete to be able to fetch all -> await function
     const handleDelete = async (e) => {
-        deleteRecipe(id);
-        history.push("/");
+        await deleteRecipe(id);
+        if (deleteRecipe) {
+            getAllRecipes();
+            history.push("/");
+        }
     };
+
     return (
         <Container className="single_recipe-main" fluid>
             <div className="single_recipe-left">
                 <h3 className="single_recipe-header">{recipe.title}</h3>
-                <img className="single_recipe-img" src={recipe?.image}></img>
+                <img
+                    className="single_recipe-img"
+                    alt=""
+                    src={recipe?.image}
+                ></img>
 
                 <p>
                     Descritpion: <br />
@@ -63,7 +72,10 @@ export default function SingleRecipe(props) {
                         <div className="content_container">
                             {ingredients &&
                                 ingredients.map((ingredient, idx) => (
-                                    <div className="container_ingredients">
+                                    <div
+                                        key={idx}
+                                        className="container_ingredients"
+                                    >
                                         <label>
                                             {ingredient.measurement}{" "}
                                             {ingredient.measurementType}
@@ -79,7 +91,10 @@ export default function SingleRecipe(props) {
                         <div className="content_container">
                             {instructions &&
                                 instructions.map((instruction, idx) => (
-                                    <div className="container_ingredients">
+                                    <div
+                                        key={idx}
+                                        className="container_ingredients"
+                                    >
                                         <label className="instruction_list-order">
                                             {instruction.list_order}
                                             {". "}

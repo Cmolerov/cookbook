@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { Redirect } from "react-router-dom";
+import {  Col } from "react-bootstrap"; //Container, Row,
+// import { Redirect } from "react-router-dom";
 import { createInstruction } from "../../services/recipes";
 import IngredientsForm from "./IngredientsForm";
 
@@ -16,7 +16,7 @@ export default function InstructionForm({ recipe }) {
     };
 
     const onKeyDown = async (e) => {
-        if (e.keyCode == 13) {
+        if (e.keyCode === 13) {
             e.preventDefault();
             let saved = await createInstruction({
                 recipeId: recipe.id,
@@ -65,7 +65,7 @@ export default function InstructionForm({ recipe }) {
                                 ></input>
                             </div>
                         </Col>
-                        {prev.length == 0 ? (
+                        {prev.length === 0 ? (
                             <button
                                 disabled="true"
                                 className="recipe_form-Continue-btn"

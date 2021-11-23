@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import { createIngredient, createInstruction } from "../../services/recipes";
+import { createIngredient } from "../../services/recipes";
 
 export default function IngredientsForm({ recipe }) {
     const history = useHistory();
@@ -19,7 +19,7 @@ export default function IngredientsForm({ recipe }) {
     };
 
     const onKeyDown = async (e) => {
-        if (e.keyCode == 13) {
+        if (e.keyCode === 13) {
             e.preventDefault();
             let saved = await createIngredient({
                 recipeId: recipe.id,
@@ -61,19 +61,23 @@ export default function IngredientsForm({ recipe }) {
                     >
                         <label>{listOrder}.</label>
                         <input
-                            onChange={(e) =>
-                                setAmount(parseInt(e.target.value))
-                            }
+                            onChange={(e) => {
+                                if (e.target.value === "") {
+                                    setAmount(0);
+                                } else {
+                                    setAmount(parseInt(e.target.value));
+                                }
+                            }}
                             value={amount}
                             style={{ width: "10%" }}
-                            placeHolder="Amt"
+                            placeholder="Amt"
                             className="recipe_form-input instructions-input"
                         ></input>
                         <select
                             onChange={(e) => setMeasurementType(e.target.value)}
                             value={measurementType}
                             style={{ width: "15%" }}
-                            placeHolder="Type"
+                            placeholder="Type"
                             className="recipe_form-input instructions-input"
                         >
                             <option>Cup</option>
@@ -93,7 +97,7 @@ export default function IngredientsForm({ recipe }) {
                         ></input>
                     </div>
                 </Col>
-                {prev.length == 0 ? (
+                {prev.length === 0 ? (
                     <button
                         disabled="true"
                         className="recipe_form-Continue-btn"

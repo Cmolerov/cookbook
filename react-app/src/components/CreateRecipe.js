@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import RecipeForm from "./recipeForms.js/RecipeForm";
-import InstructionForm from "./recipeForms.js/InstructionForm";
-import IngredientsForm from "./recipeForms.js/IngredientsForm";
+// import InstructionForm from "./recipeForms.js/InstructionForm";
+// import IngredientsForm from "./recipeForms.js/IngredientsForm";
 
 export default function CreateRecipe({ user }) {
     return (

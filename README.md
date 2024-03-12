@@ -1,26 +1,83 @@
-# Flask React Project
+# ABOUT:
+A Personal Recipe book that allows you to create recipes and share them with others. 
 
-This is the backend for the Flask React project.
+## Application Architecture
+
+CookBook's backend was built using Flask for Python. The server has a RESTful API layer for all CRUD actions. It is connected to a PostgreSQL database which leverages the SQLAlchemy ORM for information retrieval and data manipulation. The frontend was built using React and Hooks and uses built-in context for client storage and global state management. All outgoing client requests are proxied to Flask server.
+
+
+### Minimum Viable Product
+
+-   Authentication
+-   Recipe Creation
+-   Recipe Deletion
+-   Image Link
+
+
+### WIP:
+-   S3 image upload
+-   Reviews
+-   Make Recipe Private
+-   Editing
+-   Favorites
+
+
+### Future Features:
+- Smart Search
+- Ingredients Stock (displaying what you have and when to use by)
+- Mobile App with React Native
+
+## Dependencies
+
+#### Backend
+
+-   Flask
+-   SQLAlchemy
+-   Flask Login
+-   Flask JWT
+-   Werkzeug
+-   Psycopg2
+
+#### Frontend
+
+-   React
+-   Material UI
+-   Bootstrap
+-   Moment
+-   HTTP Proxy Middleware
+
+
+
+
+## Images:
+![Screenshot 2024-03-12 at 6 46 50 PM](https://github.com/Cmolerov/cookbook/assets/68914791/1f4dbb6a-e6a6-437a-bbb7-bfeff20057fc)
+![Screenshot 2024-03-12 at 6 47 11 PM](https://github.com/Cmolerov/cookbook/assets/68914791/a28c1042-5549-4ffd-9943-2efb18852541)
+![Screenshot 2024-03-12 at 6 47 25 PM](https://github.com/Cmolerov/cookbook/assets/68914791/59b6ab6d-65c5-4538-bd9d-e6afbe9c24a9)
+![Screenshot 2024-03-12 at 6 47 49 PM](https://github.com/Cmolerov/cookbook/assets/68914791/76c1bfa0-30e4-4680-b429-a99984d77af4)
+![Screenshot 2024-03-12 at 6 48 05 PM](https://github.com/Cmolerov/cookbook/assets/68914791/03848649-000b-4fca-8334-f6838a33e164)
+![Screenshot 2024-03-12 at 6 48 29 PM](https://github.com/Cmolerov/cookbook/assets/68914791/37d99b6c-7cbb-4a2c-8406-b8891dbd08a1)
+![Screenshot 2024-03-12 at 6 48 56 PM](https://github.com/Cmolerov/cookbook/assets/68914791/31ba7cab-8b8a-4eff-a0f8-2638c9ff1749)
+
+
+
+
+
+
+
 
 ## Getting started
 
-1. Clone this repository (only this branch)
-
-   ```bash
-   git clone https://github.com/appacademy-starters/python-project-starter.git
-   ```
-
-2. Install dependencies
+1. Install dependencies
 
       ```bash
       pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
       ```
 
-3. Create a **.env** file based on the example with proper settings for your
+2. Create a **.env** file based on the example with proper settings for your
    development environment
-4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+3. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
 
-5. Get into your pipenv, migrate your database, seed your database, and run your flask app
+4. Get into your pipenv, migrate your database, seed your database, and run your flask app
 
    ```bash
    pipenv shell
